@@ -10,6 +10,7 @@
     "nuxt": "3.0.0-rc.3"
   },
   "dependencies": {
+    "modern-css-reset": "^1.4.0",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0"
   }
