@@ -6,6 +6,7 @@
 				<div>
 					<NuxtLayout>
 						<NuxtPage />
+						<Tags />
 					</NuxtLayout>
 				</div>
 			</v-container>
