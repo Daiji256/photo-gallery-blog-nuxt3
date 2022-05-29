@@ -1,0 +1,91 @@
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: $color-secondary;
+  box-shadow: 0px 0px 2px 2px rgba($color-black, 0.5);
+
+  .container {
+    display: grid;
+    height: 64px;
+    max-width: $screen-size-desktop-min;
+    margin-left: auto;
+    margin-right: auto;
+
+    ul {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      display: inline-block;
+      align-items: center;
+      text-align: center;
+      color: inherit;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        margin-top: 6px;
+      }
+
+      .text {
+        font-size: $font-size-navigation-text-small;
+        margin-top: -4px;
+      }
+    }
+
+    @media screen and (min-width: $screen-size-tablet-min) {
+      a {
+        display: inline-flex;
+        width: auto;
+        padding: 0 12px;
+
+        svg {
+          margin-top: 0;
+          margin-right: 4px;
+        }
+
+        .text {
+          font-size: $font-size-navigation-text-normal;
+          margin-top: 4px;
+        }
+      }
+    }
+
+    @media (hover: hover) {
+      a {
+        transition: 0.4s;
+      }
+
+      a:hover {
+        transition: 0.4s;
+        background: rgba($color-white, 0.5);
+      }
+    }
+
+    @media (hover: none) {
+      a {
+        transition: 0.8s;
+      }
+
+      a:active {
+        transition: 0.1s;
+        background: rgba($color-white, 0.5);
+      }
+    }
+  }
+}
