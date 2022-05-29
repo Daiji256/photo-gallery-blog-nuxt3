@@ -10,10 +10,16 @@ $color-text: #333333;
 $color-black: #000000;
 $color-white: #FFFFFF;
 
+// font family
+$font-family-sans-serif: 'Noto Sans JP', 'Noto Sans CJK JP', 'Source Han Sans JP', sans-serif;
+
 // font size
 $font-size-normal: 1.6rem;
 $font-size-navigation-text-normal: 16px;
 $font-size-navigation-text-small: 8px;
+
+// letter-spacing
+$letter-spacing: 0.0625em;
 
 // screen size
 $screen-size-tablet-min: 768px;

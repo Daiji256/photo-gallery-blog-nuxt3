@@ -44,7 +44,10 @@ header {
 
       .text {
         font-size: $font-size-navigation-text-small;
-        margin-top: -4px;
+        font-weight: 700;
+        letter-spacing: $letter-spacing;
+        padding-left: $letter-spacing;
+        margin-top: -8px;
       }
     }
 
@@ -55,13 +58,14 @@ header {
         padding: 0 12px;
 
         svg {
-          margin-top: 0;
+          margin-top: 1px;
           margin-right: 4px;
         }
 
         .text {
           font-size: $font-size-navigation-text-normal;
-          margin-top: 4px;
+          font-weight: 500;
+          margin-top: 0;
         }
       }
     }
