@@ -1,5 +1,3 @@
 <template>
-	<v-footer>
-		FooterMenu
-	</v-footer>
+	FooterMenu
 </template>
