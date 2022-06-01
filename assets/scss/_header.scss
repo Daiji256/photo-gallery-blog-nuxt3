@@ -2,8 +2,7 @@ header {
   position: fixed;
   left: 0;
   right: 0;
-  background-color: $color-secondary;
-  box-shadow: 0px 0px 2px 2px rgba($color-black, 0.5);
+  background-color: $color-surface;
 
   .container {
     display: grid;
@@ -21,48 +20,45 @@ header {
     }
 
     li {
-      margin-left: auto;
-      margin-right: auto;
+      width: 25%;
     }
 
     a {
-      display: inline-block;
+      display: block;
       align-items: center;
       text-align: center;
+      justify-content: center;
       color: inherit;
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
-      width: 48px;
+      width: 80%;
       height: 48px;
+      margin-top: -8px;
+      margin-left: 10%;
       border-radius: 24px;
 
-      svg {
-        width: 24px;
-        height: 24px;
-        margin-top: 6px;
+      .icon {
+        border-radius: 24px;
       }
 
-      .text {
+      .label {
         font-size: $font-size-navigation-text-small;
-        font-weight: 700;
-        letter-spacing: $letter-spacing;
-        padding-left: $letter-spacing;
-        margin-top: -8px;
+        font-weight: 500;
       }
     }
 
     @media screen and (min-width: $screen-size-tablet-min) {
       a {
-        display: inline-flex;
-        width: auto;
-        padding: 0 12px;
+        display: flex;
+        width: 128px;
+        margin-top: 0;
 
-        svg {
-          margin-top: 1px;
+        ali .icon {
+          margin-top: 2px;
           margin-right: 4px;
         }
 
-        .text {
+        .label {
           font-size: $font-size-navigation-text-normal;
           font-weight: 500;
           margin-top: 0;
@@ -77,7 +73,18 @@ header {
 
       a:hover {
         transition: 0.4s;
-        background: rgba($color-white, 0.5);
+
+        .icon {
+          background: $color-secondary-container;
+        }
+
+        @media screen and (min-width: $screen-size-tablet-min) {
+          background: $color-secondary-container;
+
+          .icon {
+            background: transparent;
+          }
+        }
       }
     }
 
@@ -88,7 +95,10 @@ header {
 
       a:active {
         transition: 0.1s;
-        background: rgba($color-white, 0.5);
+
+        .icon {
+          background: $color-secondary-container;
+        }
       }
     }
   }
