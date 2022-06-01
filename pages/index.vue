@@ -1,26 +1,26 @@
 <template>
 	<div>
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
-		abcgi ABCGI 123 !@# あいう 漢字 ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
+		abcgi ABCGI 123 !@# あいう 漢字 あ「い」（う）え。お ！＠＃ 😀🎈
 	</div>
 </template>
 
