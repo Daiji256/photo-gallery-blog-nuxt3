@@ -1,105 +1,83 @@
 header {
+  display: flex;
   position: fixed;
-  left: 0;
-  right: 0;
+  align-items: center;
+  width: 100%;
+  height: 64px;
   background-color: $color-surface;
 
-  .container {
+  .menu {
     display: grid;
-    height: 64px;
-    max-width: $screen-size-desktop-min;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 8px;
+    border-radius: 32px;
+  }
 
-    ul {
-      display: flex;
+  .title {
+    display: flex;
+    border-radius: 32px;
+
+    .logo {
+      display: grid;
       align-items: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      margin: 8px;
     }
 
-    li {
-      width: 25%;
-    }
-
-    a {
-      display: block;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      color: inherit;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
-      width: 80%;
-      height: 48px;
-      margin-top: -8px;
-      margin-left: 10%;
-      border-radius: 24px;
-
-      .icon {
-        border-radius: 24px;
-      }
-
-      .label {
-        font-size: $font-size-navigation-text-small;
-        font-weight: 500;
-      }
+    .text {
+      display: none;
     }
 
     @media screen and (min-width: $screen-size-tablet-min) {
-      a {
-        display: flex;
-        width: 128px;
-        margin-top: 0;
-
-        ali .icon {
-          margin-top: 2px;
-          margin-right: 4px;
-        }
-
-        .label {
-          font-size: $font-size-navigation-text-normal;
-          font-weight: 500;
-          margin-top: 0;
-        }
+      .text {
+        display: grid;
+        align-items: center;
+        font-size: $font-size-top-bar-px;
+        font-weight: 500;
+        margin-right: 8px;
       }
     }
+  }
 
-    @media (hover: hover) {
-      a {
-        transition: 0.4s;
-      }
-
-      a:hover {
-        transition: 0.4s;
-
-        .icon {
-          background: $color-secondary-container;
-        }
-
-        @media screen and (min-width: $screen-size-tablet-min) {
-          background: $color-secondary-container;
-
-          .icon {
-            background: transparent;
-          }
-        }
-      }
+  @media (hover: hover) {
+    .menu {
+      transition: 0.4s;
     }
 
-    @media (hover: none) {
-      a {
-        transition: 0.8s;
-      }
+    .menu:hover {
+      transition: 0.4s;
+      background-color: $color-secondary-container;
+    }
 
-      a:active {
-        transition: 0.1s;
+    .title {
+      transition: 0.4s;
+    }
 
-        .icon {
-          background: $color-secondary-container;
-        }
-      }
+    .title:hover {
+      transition: 0.4s;
+      background-color: $color-secondary-container;
+    }
+  }
+
+  @media (hover: none) {
+    .menu {
+      transition: 0.8s;
+    }
+
+    .menu:active {
+      transition: 0.1s;
+      background-color: $color-secondary-container;
+    }
+
+    .title {
+      transition: 0.8s;
+    }
+
+    .title:active {
+      transition: 0.1s;
+      background-color: $color-secondary-container;
     }
   }
 }
