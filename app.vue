@@ -1,5 +1,5 @@
 <template>
-	<HeaderNavigation />
+	<TopBar />
 	<NuxtLayout>
 		<NuxtPage />
 		<Tags />
