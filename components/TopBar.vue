@@ -1,8 +1,12 @@
 <template>
 	<header>
-		<div class="menu">
-			<svg height="24" width="24">
+		<div class="menu" @click="onMenuClick">
+			<svg height="24" width="24" v-bind:class="{ transparent: isOpen }">
 				<path fill="currentColor" d="M3 18V16H21V18ZM3 13V11H21V13ZM3 8V6H21V8Z" />
+			</svg>
+			<svg height="24" width="24" v-bind:class="{ transparent: !isOpen }">
+				<path fill="currentColor"
+					d="M3 18V16H16V18ZM3 13V11H13V13ZM3 8V6H16V8ZM19.6 17 14.6 12 19.6 7 21 8.4 17.4 12 21 15.6Z" />
 			</svg>
 		</div>
 		<div class="title">
@@ -18,3 +22,9 @@
 		</div>
 	</header>
 </template>
+<script setup>
+let isOpen = ref(false)
+const onMenuClick = () => {
+	isOpen.value = !isOpen.value
+}
+</script>

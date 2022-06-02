@@ -5,15 +5,25 @@ header {
   width: 100%;
   height: 64px;
   background-color: $color-surface;
+  user-select: none;
 
   .menu {
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     width: 48px;
     height: 48px;
     margin: 8px;
     border-radius: 32px;
+
+    svg {
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      transition: 0.4s;
+    }
+
+    .transparent {
+      color: transparent;
+    }
   }
 
   .title {
@@ -63,20 +73,20 @@ header {
 
   @media (hover: none) {
     .menu {
-      transition: 0.8s;
+      transition: 0.4s;
     }
 
     .menu:active {
-      transition: 0.1s;
+      transition: 0.2s;
       background-color: $color-secondary-container;
     }
 
     .title {
-      transition: 0.8s;
+      transition: 0.4s;
     }
 
     .title:active {
-      transition: 0.1s;
+      transition: 0.2s;
       background-color: $color-secondary-container;
     }
   }
