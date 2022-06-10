@@ -24,9 +24,9 @@
 		</div>
 	</header>
 	<div class="drawer" v-bind:class='{ "drawer-open": isOpen }'>
-		<div class="drawer-scrim"></div>
+		<div class="drawer-scrim" @click="closeMenu"></div>
 		<div class="drawer-content">
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -37,7 +37,7 @@
 					ホーム
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -48,7 +48,7 @@
 					すべての投稿
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -59,7 +59,7 @@
 					ギャラリー
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" to="/tags/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/tags/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -71,7 +71,7 @@
 				</div>
 			</NuxtLink>
 			<hr class="outline">
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -82,7 +82,7 @@
 					このブログについて
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -93,7 +93,7 @@
 					プライバシーポリシー
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -104,7 +104,7 @@
 					お問い合わせ
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -122,5 +122,8 @@
 let isOpen = ref(false)
 const onMenuClick = () => {
 	isOpen.value = !isOpen.value
+}
+const closeMenu = () => {
+	isOpen.value = false
 }
 </script>
