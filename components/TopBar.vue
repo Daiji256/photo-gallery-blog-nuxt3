@@ -139,33 +139,43 @@ const closeMenu = () => {
 	isOpen.value = false
 }
 
-const vh = ref(0)
+let vh: number = 0
 let drawerRightX: number = 360
 const onResize = () => {
-	vh.value = window.innerHeight * 0.01
+	vh = window.innerHeight * 0.01
 	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360
-	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
+	document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
+const frameInterval: number = 1000 / 30
 const isSwipe = ref(false)
 let startX: number = 0
+let toucheX: number = 0
 let swipeLength: number = 0
+var isAnimated = false
+const animation = () => {
+	if (!isAnimated) return
+	swipeLength = startX - toucheX > 0 ? startX - toucheX : 0
+	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`)
+	document.documentElement.style.setProperty('--drawer-translate-x', `${- swipeLength / drawerRightX * 100}%`)
+	setTimeout(animation, frameInterval)
+}
 const onTouchStart = (event) => {
 	if (!isOpen.value) return
-	startX = event.touches[0].pageX < drawerRightX ? event.touches[0].pageX : drawerRightX
-	document.documentElement.style.setProperty('--drawer-transition', `0s`)
+	isAnimated = true
+	isSwipe.value = true
+	toucheX = event.touches[0].pageX
+	startX = toucheX < drawerRightX ? toucheX : drawerRightX
 	document.documentElement.style.setProperty('--drawer-opacity', `1`)
 	document.documentElement.style.setProperty('--drawer-translate-x', `0%`)
+	animation()
 }
 const onTouchMove = (event) => {
-	if (!isOpen.value) return
-	isSwipe.value = true
-	swipeLength = startX - event.touches[0].pageX > 0 ? startX - event.touches[0].pageX : 0
-	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`)
-	document.documentElement.style.setProperty('--drawer-translate-x', `${-swipeLength / drawerRightX * 100}%`)
+	toucheX = event.touches[0].pageX
 }
 const onTouchEnd = () => {
 	if (!isOpen.value) return
+	isAnimated = false
 	if (swipeLength > drawerRightX / 2) {
 		isOpen.value = false
 	}
@@ -173,9 +183,9 @@ const onTouchEnd = () => {
 }
 
 onMounted(() => {
-	vh.value = window.innerHeight * 0.01
+	vh = window.innerHeight * 0.01
 	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360
-	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
+	document.documentElement.style.setProperty('--vh', `${vh}px`)
 	window.addEventListener('resize', onResize)
 	window.addEventListener('touchstart', onTouchStart)
 	window.addEventListener('touchmove', onTouchMove)
@@ -184,5 +194,9 @@ onMounted(() => {
 })
 onBeforeUnmount(() => {
 	window.removeEventListener('resize', onResize)
+	window.removeEventListener('touchstart', onTouchStart)
+	window.removeEventListener('touchmove', onTouchMove)
+	window.removeEventListener('touchend', onTouchEnd)
+	window.removeEventListener('touchcancel', onTouchEnd)
 })
 </script>
