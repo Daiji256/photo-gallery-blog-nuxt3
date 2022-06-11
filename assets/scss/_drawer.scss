@@ -98,11 +98,23 @@
 
   .drawer-scrim {
     opacity: 1;
-    transition-timing-function: ease-out;
   }
 
   .drawer-content {
     transform: translateX(0%);
-    transition-timing-function: ease-out;
+  }
+}
+
+.drawer-swipe {
+  transition: visibility var(--drawer-transition, 0s);
+
+  .drawer-scrim {
+    opacity: var(--drawer-opacity, 1);
+    transition: opacity var(--drawer-transition, 0s);
+  }
+
+  .drawer-content {
+    transform: translateX(var(--drawer-translate-x, 0%));
+    transition: transform var(--drawer-transition, 0s);
   }
 }

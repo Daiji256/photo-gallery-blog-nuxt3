@@ -23,9 +23,9 @@
 			</div>
 		</div>
 	</header>
-	<div class="drawer" v-bind:class='{ "drawer-open": isOpen }'>
+	<div class="drawer" v-bind:class='{ "drawer-open": isOpen, "drawer-swipe": isSwipe }'>
 		<div class="drawer-scrim" @click="closeMenu"></div>
-		<div class="drawer-content">
+		<div class="drawer-content" id="drawerContent">
 			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
@@ -130,7 +130,7 @@
 		</div>
 	</div>
 </template>
-<script setup>
+<script setup lang="ts">
 const isOpen = ref(false)
 const onMenuClick = () => {
 	isOpen.value = !isOpen.value
@@ -138,15 +138,48 @@ const onMenuClick = () => {
 const closeMenu = () => {
 	isOpen.value = false
 }
+
 const vh = ref(0)
+let drawerRightX: number = 360
 const onResize = () => {
 	vh.value = window.innerHeight * 0.01
+	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360
 	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
 }
+
+const isSwipe = ref(false)
+let startX: number = 0
+let swipeLength: number = 0
+const onTouchStart = (event) => {
+	if (!isOpen.value) return
+	startX = event.touches[0].pageX < drawerRightX ? event.touches[0].pageX : drawerRightX
+	document.documentElement.style.setProperty('--drawer-transition', `0s`)
+	document.documentElement.style.setProperty('--drawer-opacity', `1`)
+	document.documentElement.style.setProperty('--drawer-translate-x', `0%`)
+}
+const onTouchMove = (event) => {
+	if (!isOpen.value) return
+	isSwipe.value = true
+	swipeLength = startX - event.touches[0].pageX > 0 ? startX - event.touches[0].pageX : 0
+	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`)
+	document.documentElement.style.setProperty('--drawer-translate-x', `${-swipeLength / drawerRightX * 100}%`)
+}
+const onTouchEnd = () => {
+	if (!isOpen.value) return
+	if (swipeLength > drawerRightX / 2) {
+		isOpen.value = false
+	}
+	isSwipe.value = false
+}
+
 onMounted(() => {
 	vh.value = window.innerHeight * 0.01
+	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360
 	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
 	window.addEventListener('resize', onResize)
+	window.addEventListener('touchstart', onTouchStart)
+	window.addEventListener('touchmove', onTouchMove)
+	window.addEventListener('touchend', onTouchEnd)
 })
 onBeforeUnmount(() => {
 	window.removeEventListener('resize', onResize)
