@@ -150,11 +150,13 @@ const onResize = () => {
 const frameInterval: number = 1000 / 30
 const isSwipe = ref(false)
 let startX: number = 0
+let touchePrevX: number = 0
 let toucheX: number = 0
 let swipeLength: number = 0
 var isAnimated = false
 const animation = () => {
 	if (!isAnimated) return
+	touchePrevX = toucheX
 	swipeLength = startX - toucheX > 0 ? startX - toucheX : 0
 	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`)
 	document.documentElement.style.setProperty('--drawer-translate-x', `${- swipeLength / drawerRightX * 100}%`)
@@ -176,8 +178,8 @@ const onTouchMove = (event) => {
 const onTouchEnd = () => {
 	if (!isOpen.value) return
 	isAnimated = false
-	if (swipeLength > drawerRightX / 2) {
-		isOpen.value = false
+	if (toucheX - touchePrevX < -10 || (toucheX - touchePrevX < 10 && swipeLength > drawerRightX / 2)) { // 10 は適当な値
+		closeMenu()
 	}
 	isSwipe.value = false
 }
