@@ -119,11 +119,21 @@
 	</div>
 </template>
 <script setup>
-let isOpen = ref(false)
+const isOpen = ref(false)
 const onMenuClick = () => {
 	isOpen.value = !isOpen.value
 }
 const closeMenu = () => {
 	isOpen.value = false
 }
+const vh = ref(0)
+const onResize = () => {
+	vh.value = window.innerHeight * 0.01
+	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
+}
+onMounted(() => {
+	vh.value = window.innerHeight * 0.01
+	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
+	window.addEventListener('resize', onResize)
+})
 </script>

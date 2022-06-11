@@ -8,10 +8,10 @@
 
   .drawer-scrim {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba($color-neutral-variant-20, 0.4);
-    transition: 0.2s;
+    transition: opacity 0.2s;
     opacity: 0;
   }
 
@@ -19,8 +19,8 @@
     display: flex;
     flex-flow: column;
     overflow: auto;
-    width: min(360px, 75%);
-    height: 100%;
+    width: min(360px, 75vw);
+    height: calc(var(--vh, 0.5vh) * 100 - 64px);
     padding-left: 12px;
     padding-right: 12px;
     background-color: $color-surface;
@@ -28,7 +28,7 @@
     border-bottom-right-radius: 16px;
     transform: translateX(-100%);
     transition-timing-function: ease-in;
-    transition: 0.2s;
+    transition: transform 0.2s;
 
     .outline {
       width: calc(100% - 32px);
