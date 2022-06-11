@@ -10,6 +10,7 @@
     height: 100vh;
     background-color: rgba($color-neutral-variant-20, 0.4);
     opacity: 0;
+    transition-timing-function: ease-in;
     transition: opacity 0.2s;
   }
 
@@ -97,6 +98,7 @@
 
   .drawer-scrim {
     opacity: 1;
+    transition-timing-function: ease-out;
   }
 
   .drawer-content {
