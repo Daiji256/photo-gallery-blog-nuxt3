@@ -60,6 +60,14 @@
         font-weight: $font-label-large-weight;
         line-height: $font-label-large-line-height;
       }
+
+      .open-in-new {
+        display: grid;
+        align-items: center;
+        padding-left: 4px;
+        padding-bottom: 4px;
+        color: $color-neutral-variant-50;
+      }
     }
 
     @media (hover: hover) {
