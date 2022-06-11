@@ -180,6 +180,7 @@ onMounted(() => {
 	window.addEventListener('touchstart', onTouchStart)
 	window.addEventListener('touchmove', onTouchMove)
 	window.addEventListener('touchend', onTouchEnd)
+	window.addEventListener('touchcancel', onTouchEnd)
 })
 onBeforeUnmount(() => {
 	window.removeEventListener('resize', onResize)
