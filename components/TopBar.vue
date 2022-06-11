@@ -148,4 +148,7 @@ onMounted(() => {
 	document.documentElement.style.setProperty('--vh', `${vh.value}px`)
 	window.addEventListener('resize', onResize)
 })
+onBeforeUnmount(() => {
+	window.removeEventListener('resize', onResize)
+})
 </script>
