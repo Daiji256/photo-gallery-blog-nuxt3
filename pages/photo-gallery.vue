@@ -1,6 +1,6 @@
 <template>
 	<div>
-		ホーム
+		フォトギャラリー
 	</div>
 </template>
 

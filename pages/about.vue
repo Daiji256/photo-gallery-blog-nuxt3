@@ -1,6 +1,6 @@
 <template>
 	<div>
-		ホーム
+		このブログについて
 	</div>
 </template>
 

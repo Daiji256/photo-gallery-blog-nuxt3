@@ -37,7 +37,7 @@
 					ホーム
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/all-posts/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -48,7 +48,7 @@
 					すべての投稿
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/photo-gallery/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -71,7 +71,7 @@
 				</div>
 			</NuxtLink>
 			<hr class="outline">
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/about/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -82,7 +82,7 @@
 					このブログについて
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/privacy-policy/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -93,7 +93,7 @@
 					プライバシーポリシー
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
+			<a class="drawer-menu" target="_blank" rel="noopener" href="https://example.com">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -109,8 +109,8 @@
 							d="M17.5 9.917V15.75Q17.5 16.479 16.99 16.99Q16.479 17.5 15.75 17.5H4.25Q3.521 17.5 3.01 16.99Q2.5 16.479 2.5 15.75V4.25Q2.5 3.521 3.01 3.01Q3.521 2.5 4.25 2.5H10.083V4.25H4.25Q4.25 4.25 4.25 4.25Q4.25 4.25 4.25 4.25V15.75Q4.25 15.75 4.25 15.75Q4.25 15.75 4.25 15.75H15.75Q15.75 15.75 15.75 15.75Q15.75 15.75 15.75 15.75V9.917ZM8.104 13.125 6.875 11.896 14.521 4.25H11.833V2.5H17.5V8.167H15.75V5.479Z" />
 					</svg>
 				</div>
-			</NuxtLink>
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/">
+			</a>
+			<a class="drawer-menu" target="_blank" rel="noopener" href="https://example.com">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -126,7 +126,7 @@
 							d="M17.5 9.917V15.75Q17.5 16.479 16.99 16.99Q16.479 17.5 15.75 17.5H4.25Q3.521 17.5 3.01 16.99Q2.5 16.479 2.5 15.75V4.25Q2.5 3.521 3.01 3.01Q3.521 2.5 4.25 2.5H10.083V4.25H4.25Q4.25 4.25 4.25 4.25Q4.25 4.25 4.25 4.25V15.75Q4.25 15.75 4.25 15.75Q4.25 15.75 4.25 15.75H15.75Q15.75 15.75 15.75 15.75Q15.75 15.75 15.75 15.75V9.917ZM8.104 13.125 6.875 11.896 14.521 4.25H11.833V2.5H17.5V8.167H15.75V5.479Z" />
 					</svg>
 				</div>
-			</NuxtLink>
+			</a>
 		</div>
 	</div>
 </template>

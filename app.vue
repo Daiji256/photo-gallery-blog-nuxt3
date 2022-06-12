@@ -2,7 +2,11 @@
 	<TopBar />
 	<NuxtLayout>
 		<NuxtPage />
-		<Tags />
+		<all-posts />
+		<photo-gallery />
+		<tags />
+		<about />
+		<privacy-policy />
 	</NuxtLayout>
 	<FooterMenu />
 </template>

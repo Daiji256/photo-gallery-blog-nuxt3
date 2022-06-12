@@ -1,6 +1,6 @@
 <template>
 	<div>
-		ホーム
+		プライバシーポリシー
 	</div>
 </template>
 
