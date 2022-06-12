@@ -1,0 +1,8 @@
+.photo-slider {
+  img {
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    aspect-ratio: 1.618034;
+    object-fit: cover;
+  }
+}
