@@ -131,76 +131,76 @@
 	</div>
 </template>
 <script setup lang="ts">
-const isOpen = ref(false);
+const isOpen = ref(false)
 const onMenuClick = () => {
-	isOpen.value = !isOpen.value;
+	isOpen.value = !isOpen.value
 }
 const closeMenu = () => {
-	isOpen.value = false;
+	isOpen.value = false
 }
 
-let vh: number = 0;
-let drawerRightX: number = 360;
+let vh: number = 0
+let drawerRightX: number = 360
 const onResize = () => {
-	vh = window.innerHeight * 0.01;
-	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	vh = window.innerHeight * 0.01
+	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360
+	document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
-const frameInterval: number = 1000 / 30;
-const isSwipe = ref(false);
-let startX: number = 0;
-let touchePrevX: number = 0;
-let toucheX: number = 0;
-let swipeLength: number = 0;
-var isAnimated = false;
+const frameInterval: number = 1000 / 30
+const isSwipe = ref(false)
+let startX: number = 0
+let touchePrevX: number = 0
+let toucheX: number = 0
+let swipeLength: number = 0
+var isAnimated = false
 const animation = () => {
-	if (!isAnimated) return;
-	touchePrevX = toucheX;
-	swipeLength = startX - toucheX > 0 ? startX - toucheX : 0;
-	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`);
-	document.documentElement.style.setProperty('--drawer-translate-x', `${- swipeLength / drawerRightX * 100}%`);
-	setTimeout(animation, frameInterval);
+	if (!isAnimated) return
+	touchePrevX = toucheX
+	swipeLength = startX - toucheX > 0 ? startX - toucheX : 0
+	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`)
+	document.documentElement.style.setProperty('--drawer-translate-x', `${- swipeLength / drawerRightX * 100}%`)
+	setTimeout(animation, frameInterval)
 }
 const onTouchStart = (event) => {
-	if (!isOpen.value) return;
-	isAnimated = true;
-	isSwipe.value = true;
-	toucheX = event.touches[0].pageX;
-	startX = toucheX < drawerRightX ? toucheX : drawerRightX;
-	document.documentElement.style.setProperty('--drawer-opacity', `1`);
-	document.documentElement.style.setProperty('--drawer-translate-x', `0%`);
-	animation();
+	if (!isOpen.value) return
+	isAnimated = true
+	isSwipe.value = true
+	toucheX = event.touches[0].pageX
+	startX = toucheX < drawerRightX ? toucheX : drawerRightX
+	document.documentElement.style.setProperty('--drawer-opacity', `1`)
+	document.documentElement.style.setProperty('--drawer-translate-x', `0%`)
+	animation()
 }
 const onTouchMove = (event) => {
-	toucheX = event.touches[0].pageX;
+	toucheX = event.touches[0].pageX
 }
 const onTouchEnd = () => {
-	if (!isOpen.value) return;
-	isAnimated = false;
+	if (!isOpen.value) return
+	isAnimated = false
 	if (toucheX - touchePrevX < -10 || (toucheX - touchePrevX < 10 && swipeLength > drawerRightX / 2)) { // 10 は適当な値
-		closeMenu();
+		closeMenu()
 	}
-	isSwipe.value = false;
+	isSwipe.value = false
 }
 
 onMounted(() => {
-	vh = window.innerHeight * 0.01;
-	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-	window.addEventListener('resize', onResize);
-	window.addEventListener('touchstart', onTouchStart);
-	window.addEventListener('touchmove', onTouchMove);
-	window.addEventListener('touchend', onTouchEnd);
-	window.addEventListener('touchcancel', onTouchEnd);
-	window.addEventListener('popstate', closeMenu);
-});
+	vh = window.innerHeight * 0.01
+	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360
+	document.documentElement.style.setProperty('--vh', `${vh}px`)
+	window.addEventListener('resize', onResize)
+	window.addEventListener('touchstart', onTouchStart)
+	window.addEventListener('touchmove', onTouchMove)
+	window.addEventListener('touchend', onTouchEnd)
+	window.addEventListener('touchcancel', onTouchEnd)
+	window.addEventListener('popstate', closeMenu)
+})
 onBeforeUnmount(() => {
-	window.removeEventListener('resize', onResize);
-	window.removeEventListener('touchstart', onTouchStart);
-	window.removeEventListener('touchmove', onTouchMove);
-	window.removeEventListener('touchend', onTouchEnd);
-	window.removeEventListener('touchcancel', onTouchEnd);
-	window.removeEventListener('popstate', closeMenu);
-});
+	window.removeEventListener('resize', onResize)
+	window.removeEventListener('touchstart', onTouchStart)
+	window.removeEventListener('touchmove', onTouchMove)
+	window.removeEventListener('touchend', onTouchEnd)
+	window.removeEventListener('touchcancel', onTouchEnd)
+	window.removeEventListener('popstate', closeMenu)
+})
 </script>
