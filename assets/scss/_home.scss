@@ -1,8 +1,23 @@
 .photo-slider {
+  position: relative;
+  width: calc(100% - 32px);
+  aspect-ratio: 1.618034;
+  margin: 0 auto;
+
   img {
-    margin: 0 auto;
-    width: calc(100% - 32px);
+    position: absolute;
+    width: 100%;
     aspect-ratio: 1.618034;
     object-fit: cover;
+  }
+
+  .fadeout {
+    opacity: 0;
+    transition: 2s ease-in-out;
+  }
+
+  .fadein {
+    opacity: 1;
+    transition: 2s ease-in-out;
   }
 }
