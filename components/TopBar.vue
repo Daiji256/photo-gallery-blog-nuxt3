@@ -193,6 +193,7 @@ onMounted(() => {
 	window.addEventListener('touchmove', onTouchMove)
 	window.addEventListener('touchend', onTouchEnd)
 	window.addEventListener('touchcancel', onTouchEnd)
+	window.addEventListener('popstate', closeMenu)
 })
 onBeforeUnmount(() => {
 	window.removeEventListener('resize', onResize)
@@ -200,5 +201,6 @@ onBeforeUnmount(() => {
 	window.removeEventListener('touchmove', onTouchMove)
 	window.removeEventListener('touchend', onTouchEnd)
 	window.removeEventListener('touchcancel', onTouchEnd)
+	window.removeEventListener('popstate', closeMenu)
 })
 </script>
