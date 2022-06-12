@@ -28,9 +28,12 @@ header {
   }
 
   .title-box {
+    text-decoration: none;
+    color: inherit;
     margin-right: 64px;
     width: calc(100% - 128px);
     text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     .title {
       display: inline-flex;
