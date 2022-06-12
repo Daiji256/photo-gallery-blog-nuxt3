@@ -1,63 +1,30 @@
 <template>
 	<div class="photo-slider">
-		<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
-		<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
+		<img id="slidePhoto" src="/images/sample-01.jpg">
 	</div>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
-	あ<br>
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-	layout: 'main-wrapper',
-})
-
 const imgSrc = [
 	"/images/sample-01.jpg",
 	"/images/sample-02.jpg",
 	"/images/sample-03.jpg",
 	"/images/sample-04.jpg",
 	"/images/sample-05.jpg",
-]
-let count: number = 1
+];
+let count: number = 1;
 
 const slideTime = () => {
-	document.getElementById("slidePhoto").setAttribute('src', `${imgSrc[count]}`)
-	count++
-	if (count >= imgSrc.length) count = 0
+	document.getElementById("slidePhoto").setAttribute('src', `${imgSrc[count]}`);
+	count++;
+	if (count >= imgSrc.length) count = 0;
 }
 
 onMounted(() => {
-	setInterval(slideTime, 500)
-})
+	setInterval(slideTime, 500);
+});
+
+definePageMeta({
+	layout: 'main-wrapper',
+});
 </script>
