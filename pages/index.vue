@@ -3,19 +3,19 @@
 		<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
 		<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
 		<div class="indicator">
-			<div class="item" @click="setPage(0)">
+			<div class="item" v-bind:class='{ "active": pageNum == 0 }' @click="setPage(0)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" @click="setPage(1)">
+			<div class="item" v-bind:class='{ "active": pageNum == 1 }' @click="setPage(1)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" @click="setPage(2)">
+			<div class="item" v-bind:class='{ "active": pageNum == 2 }' @click="setPage(2)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" @click="setPage(3)">
+			<div class="item" v-bind:class='{ "active": pageNum == 3 }' @click="setPage(3)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" @click="setPage(4)">
+			<div class="item" v-bind:class='{ "active": pageNum == 4 }' @click="setPage(4)">
 				<div class="circle"></div>
 			</div>
 		</div>
@@ -30,23 +30,22 @@ const imgSrc = [
 	"/images/sample-04.jpg",
 	"/images/sample-05.jpg",
 ];
+const pageNum = ref(0);
 let intervalId = null;
-let pageNum: number = 1;
 let imgFlg: boolean = false;
 
 const slider = () => {
+	pageNum.value = (pageNum.value + 1) % imgSrc.length;
 	if (imgFlg) {
-		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum]}`);
+		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum.value]}`);
 		document.getElementById("slidePhoto1").className = "fadein";
 		document.getElementById("slidePhoto2").className = "fadeout";
 	} else {
-		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum]}`);
+		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum.value]}`);
 		document.getElementById("slidePhoto2").className = "fadein";
 		document.getElementById("slidePhoto1").className = "fadeout";
 	}
 	imgFlg = !imgFlg;
-	pageNum++;
-	if (pageNum >= imgSrc.length) pageNum = 0;
 }
 
 const setSlideInterval = () => {
@@ -54,19 +53,17 @@ const setSlideInterval = () => {
 }
 
 const setPage = (setPageNum: number) => {
-	pageNum = setPageNum;
+	pageNum.value = setPageNum;
 	if (imgFlg) {
-		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum]}`);
+		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum.value]}`);
 		document.getElementById("slidePhoto1").className = "quick-in";
 		document.getElementById("slidePhoto2").className = "quick-out";
 	} else {
-		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum]}`);
+		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum.value]}`);
 		document.getElementById("slidePhoto2").className = "quick-in";
 		document.getElementById("slidePhoto1").className = "quick-out";
 	}
 	imgFlg = !imgFlg;
-	pageNum++;
-	if (pageNum >= imgSrc.length) pageNum = 0;
 	clearInterval(intervalId);
 	setSlideInterval();
 }
