@@ -3,19 +3,24 @@
 		<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
 		<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
 		<div class="indicator">
-			<div class="item" v-bind:class='{ "active": pageNum == 0 }' @click="setPage(0)">
+			<div class="item" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }' id="item0"
+				@click="setPage(0)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 1 }' @click="setPage(1)">
+			<div class="item" v-bind:class='{ "active": pageNum == 1, "quick": isQuick }' id="item1"
+				@click="setPage(1)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 2 }' @click="setPage(2)">
+			<div class="item" v-bind:class='{ "active": pageNum == 2, "quick": isQuick }' id="item2"
+				@click="setPage(2)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 3 }' @click="setPage(3)">
+			<div class="item" v-bind:class='{ "active": pageNum == 3, "quick": isQuick }' id="item3"
+				@click="setPage(3)">
 				<div class="circle"></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 4 }' @click="setPage(4)">
+			<div class="item" v-bind:class='{ "active": pageNum == 4, "quick": isQuick }' id="item4"
+				@click="setPage(4)">
 				<div class="circle"></div>
 			</div>
 		</div>
@@ -31,11 +36,13 @@ const imgSrc = [
 	"/images/sample-05.jpg",
 ];
 const pageNum = ref(0);
+const isQuick = ref(false);
 let intervalId = null;
 let imgFlg: boolean = false;
 
 const slider = () => {
 	pageNum.value = (pageNum.value + 1) % imgSrc.length;
+	isQuick.value = false;
 	if (imgFlg) {
 		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum.value]}`);
 		document.getElementById("slidePhoto1").className = "fadein";
@@ -54,6 +61,7 @@ const setSlideInterval = () => {
 
 const setPage = (setPageNum: number) => {
 	pageNum.value = setPageNum;
+	isQuick.value = true;
 	if (imgFlg) {
 		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum.value]}`);
 		document.getElementById("slidePhoto1").className = "quick-in";

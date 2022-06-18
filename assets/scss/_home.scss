@@ -47,6 +47,13 @@
         height: 8px;
         border-radius: 4px;
         margin: 6px;
+        transition: 2s ease-in-out;
+      }
+    }
+
+    .quick {
+      .circle {
+        transition: 0.1s ease-in-out;
       }
     }
 
