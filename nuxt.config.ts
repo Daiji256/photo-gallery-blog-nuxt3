@@ -5,4 +5,5 @@ export default defineNuxtConfig({
 	target: 'static',
 	ssr: false,
 	css: ['modern-css-reset', '~/assets/scss/main.scss'],
+	modules: ['@nuxt/content'],
 })
