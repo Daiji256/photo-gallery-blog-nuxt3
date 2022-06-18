@@ -55,7 +55,18 @@ const setSlideInterval = () => {
 
 const setPage = (setPageNum: number) => {
 	pageNum = setPageNum;
-	slider();
+	if (imgFlg) {
+		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum]}`);
+		document.getElementById("slidePhoto1").className = "quick-in";
+		document.getElementById("slidePhoto2").className = "quick-out";
+	} else {
+		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum]}`);
+		document.getElementById("slidePhoto2").className = "quick-in";
+		document.getElementById("slidePhoto1").className = "quick-out";
+	}
+	imgFlg = !imgFlg;
+	pageNum++;
+	if (pageNum >= imgSrc.length) pageNum = 0;
 	clearInterval(intervalId);
 	setSlideInterval();
 }
