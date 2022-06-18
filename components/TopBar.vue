@@ -153,7 +153,7 @@ let startX: number = 0;
 let touchePrevX: number = 0;
 let toucheX: number = 0;
 let swipeLength: number = 0;
-var isAnimated = false;
+let isAnimated = false;
 const animation = () => {
 	if (!isAnimated) return;
 	touchePrevX = toucheX;
@@ -196,6 +196,7 @@ onMounted(() => {
 	window.addEventListener('popstate', closeMenu);
 });
 onBeforeUnmount(() => {
+	isAnimated = false;
 	window.removeEventListener('resize', onResize);
 	window.removeEventListener('touchstart', onTouchStart);
 	window.removeEventListener('touchmove', onTouchMove);
