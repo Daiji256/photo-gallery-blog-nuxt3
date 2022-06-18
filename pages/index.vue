@@ -3,25 +3,20 @@
 		<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
 		<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
 		<div class="indicator">
-			<div class="item" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }' id="item0"
-				@click="setPage(0)">
-				<div class="circle"></div>
+			<div class="item" @click="setPage(0)">
+				<div class="circle" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }'></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 1, "quick": isQuick }' id="item1"
-				@click="setPage(1)">
-				<div class="circle"></div>
+			<div class="item" @click="setPage(1)">
+				<div class="circle" v-bind:class='{ "active": pageNum == 1, "quick": isQuick }'></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 2, "quick": isQuick }' id="item2"
-				@click="setPage(2)">
-				<div class="circle"></div>
+			<div class="item" @click="setPage(2)">
+				<div class="circle" v-bind:class='{ "active": pageNum == 2, "quick": isQuick }'></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 3, "quick": isQuick }' id="item3"
-				@click="setPage(3)">
-				<div class="circle"></div>
+			<div class="item" @click="setPage(3)">
+				<div class="circle" v-bind:class='{ "active": pageNum == 3, "quick": isQuick }'></div>
 			</div>
-			<div class="item" v-bind:class='{ "active": pageNum == 4, "quick": isQuick }' id="item4"
-				@click="setPage(4)">
-				<div class="circle"></div>
+			<div class="item" @click="setPage(4)">
+				<div class="circle" v-bind:class='{ "active": pageNum == 4, "quick": isQuick }'></div>
 			</div>
 		</div>
 	</div>

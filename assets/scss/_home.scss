@@ -23,12 +23,12 @@
 
   .quick-out {
     opacity: 0;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 
   .quick-in {
     opacity: 1;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 
   .indicator {
@@ -49,16 +49,12 @@
         margin: 6px;
         transition: 2s ease-in-out;
       }
-    }
 
-    .quick {
-      .circle {
-        transition: 0.1s ease-in-out;
+      .quick {
+        transition: 0.2s ease-in-out;
       }
-    }
 
-    .active {
-      .circle {
+      .active {
         background-color: rgba(255, 255, 0, 0.5);
       }
     }
