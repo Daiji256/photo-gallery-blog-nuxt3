@@ -2,6 +2,23 @@
 	<div class="photo-slider">
 		<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
 		<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
+		<div class="indicator">
+			<div class="item" @click="setPage(0)">
+				<div class="circle"></div>
+			</div>
+			<div class="item" @click="setPage(1)">
+				<div class="circle"></div>
+			</div>
+			<div class="item" @click="setPage(2)">
+				<div class="circle"></div>
+			</div>
+			<div class="item" @click="setPage(3)">
+				<div class="circle"></div>
+			</div>
+			<div class="item" @click="setPage(4)">
+				<div class="circle"></div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -13,26 +30,41 @@ const imgSrc = [
 	"/images/sample-04.jpg",
 	"/images/sample-05.jpg",
 ];
-let count: number = 1;
+let intervalId = null;
+let pageNum: number = 1;
 let imgFlg: boolean = false;
 
-const slideTime = () => {
+const slider = () => {
 	if (imgFlg) {
-		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[count]}`);
+		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum]}`);
 		document.getElementById("slidePhoto1").className = "fadein";
 		document.getElementById("slidePhoto2").className = "fadeout";
 	} else {
-		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[count]}`);
+		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum]}`);
 		document.getElementById("slidePhoto2").className = "fadein";
 		document.getElementById("slidePhoto1").className = "fadeout";
 	}
 	imgFlg = !imgFlg;
-	count++;
-	if (count >= imgSrc.length) count = 0;
+	pageNum++;
+	if (pageNum >= imgSrc.length) pageNum = 0;
+}
+
+const setSlideInterval = () => {
+	intervalId = setInterval(slider, 10000);
+}
+
+const setPage = (setPageNum: number) => {
+	pageNum = setPageNum;
+	slider();
+	clearInterval(intervalId);
+	setSlideInterval();
 }
 
 onMounted(() => {
-	setInterval(slideTime, 10000);
+	setSlideInterval();
+});
+onBeforeUnmount(() => {
+	clearInterval(intervalId);
 });
 
 definePageMeta({
