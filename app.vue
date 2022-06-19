@@ -2,7 +2,7 @@
 	<TopBar />
 	<NuxtLayout>
 		<NuxtPage />
-		<all-posts />
+		<posts />
 		<photo-gallery />
 		<tags />
 		<about />

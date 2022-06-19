@@ -37,7 +37,7 @@
 					ホーム
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" @click="closeMenu" to="/all-posts/">
+			<NuxtLink class="drawer-menu" @click="closeMenu" to="/posts/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
