@@ -1,0 +1,33 @@
+.post-card {
+  width: 100%;
+  padding: 16px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: $golden-ratio;
+    object-fit: cover;
+  }
+
+  .title {
+    @extend .title-large;
+  }
+
+  .tags {
+    @extend .title-medium;
+  }
+
+  .date {
+    @extend .title-small;
+  }
+}
+
+.post-card+.post-card {
+  border: none;
+  border-top: 1px solid $color-neutral-variant-50;
+}

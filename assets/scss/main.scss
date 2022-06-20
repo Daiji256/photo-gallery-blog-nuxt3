@@ -1,4 +1,4 @@
-@import 'variable', 'main-wrapper', 'header', 'drawer', 'home';
+@import 'variable', 'typography', 'main-wrapper', 'header', 'drawer', 'home', 'posts';
 
 html {
   font-size: 62.5%;
@@ -6,9 +6,6 @@ html {
 
 body {
   font-family: $font-family-sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: $color-text;
   -webkit-text-size-adjust: 100%;
   line-break: strict;
   text-align: justify;
