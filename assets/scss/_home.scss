@@ -42,7 +42,7 @@
       vertical-align: bottom;
 
       .circle {
-        background-color: $color-primary-container;
+        background-color: $color-light-primary-container;
         width: 8px;
         height: 8px;
         border-radius: 4px;
@@ -55,7 +55,7 @@
       }
 
       .active {
-        background-color: $color-primary;
+        background-color: $color-light-primary;
       }
     }
   }
