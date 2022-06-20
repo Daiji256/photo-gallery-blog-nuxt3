@@ -49,14 +49,13 @@ header {
       .text {
         display: none;
         margin-left: 4px;
+        @extend .title-medium;
       }
 
       @media screen and (min-width: $screen-x-small-min) {
         .text {
           display: grid;
           align-items: center;
-          font-size: $font-size-top-bar-px;
-          font-weight: 500;
           margin-right: 8px;
         }
       }

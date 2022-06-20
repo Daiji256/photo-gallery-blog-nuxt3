@@ -56,9 +56,7 @@
       .text {
         display: grid;
         align-items: center;
-        font-size: $font-label-large-size;
-        font-weight: $font-label-large-weight;
-        line-height: $font-label-large-line-height;
+        @extend .label-large;
       }
 
       .open-in-new {

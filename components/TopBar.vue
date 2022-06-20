@@ -18,7 +18,7 @@
 					</svg>
 				</div>
 				<div class="text">
-					Photo Gallery Blog
+					Photo Gallery
 				</div>
 			</div>
 		</NuxtLink>
