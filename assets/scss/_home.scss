@@ -1,13 +1,13 @@
 .photo-slider {
   position: relative;
   width: calc(100% - 32px);
-  aspect-ratio: 1.618034;
+  aspect-ratio: $golden-ratio;
   margin: 0 auto;
 
   img {
     position: absolute;
     width: 100%;
-    aspect-ratio: 1.618034;
+    aspect-ratio: $golden-ratio;
     object-fit: cover;
   }
 
