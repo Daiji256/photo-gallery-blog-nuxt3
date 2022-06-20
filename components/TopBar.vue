@@ -70,7 +70,7 @@
 					タグ
 				</div>
 			</NuxtLink>
-			<hr class="outline">
+			<hr class="line">
 			<NuxtLink class="drawer-menu" @click="closeMenu" to="/about/">
 				<div class="logo">
 					<svg height="24" width="24">
