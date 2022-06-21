@@ -1,5 +1,5 @@
 <template>
-	<header>
+	<header v-bind:class='{ "on-scroll": isScroll }'>
 		<div class="menu" @click="onMenuClick">
 			<svg height="24" width="24" v-bind:class='{ "transparent": isOpen }'>
 				<path fill="currentColor" d="M3 18V16H21V18ZM3 13V11H21V13ZM3 8V6H21V8Z" />
@@ -131,6 +131,11 @@
 	</div>
 </template>
 <script setup lang="ts">
+const isScroll = ref(false);
+const onScroll = () => {
+	isScroll.value = window.scrollY > 0;
+}
+
 const isOpen = ref(false);
 const onMenuClick = () => {
 	isOpen.value = !isOpen.value;
@@ -194,6 +199,7 @@ onMounted(() => {
 	window.addEventListener('touchend', onTouchEnd);
 	window.addEventListener('touchcancel', onTouchEnd);
 	window.addEventListener('popstate', closeMenu);
+	window.addEventListener('scroll', onScroll);
 });
 onBeforeUnmount(() => {
 	isAnimated = false;

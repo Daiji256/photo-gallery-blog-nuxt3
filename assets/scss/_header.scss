@@ -5,8 +5,10 @@ header {
   align-items: center;
   width: 100%;
   height: 64px;
-  background-color: $color-surface;
   user-select: none;
+  background-color: $color-surface;
+  transition-timing-function: ease-in-out;
+  transition: background-color 0.2s;
 
   .menu {
     position: relative;
@@ -101,4 +103,8 @@ header {
       background-color: $color-secondary-container;
     }
   }
+}
+
+.on-scroll {
+  background-color: elevation($color-surface, $elevation-level-2);
 }
