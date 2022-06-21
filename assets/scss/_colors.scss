@@ -152,3 +152,14 @@ $color-on-surface: $color-light-on-surface;
 $color-surface-variant: $color-light-surface-variant;
 $color-on-surface-variant: $color-light-on-surface-variant;
 $color-outline: $color-light-outline;
+
+$elevation-level-0: 0%;
+$elevation-level-1: 5%;
+$elevation-level-2: 8%;
+$elevation-level-3: 11%;
+$elevation-level-4: 12%;
+$elevation-level-5: 14%;
+
+@function elevation($surface, $alpha) {
+  @return mix($color-primary, $surface, $alpha);
+}
