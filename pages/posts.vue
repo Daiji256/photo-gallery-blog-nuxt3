@@ -9,7 +9,7 @@
 						{{ tag }}
 					</nuxt-link>
 				</div>
-				<div class="date">{{ post.date }}</div>
+				<div class="date">{{ dateJa(post.date) }}</div>
 			</nuxt-link>
 		</div>
 	</div>
@@ -19,6 +19,15 @@
 const posts = await queryContent('posts')
 	.only(['_path', 'title', 'date', 'tags'])
 	.where({ '_draft': false })
-	.sort({ 'date': 1 })
+	.sort({ 'date': -1 })
 	.find();
+
+const dateJa = (date: string) => {
+	return date
+		.substring(0, date.indexOf('T'))
+		.replaceAll('-0', '-')
+		.replace('-', '年')
+		.replace('-', '月')
+		.concat('日');
+}
 </script>
