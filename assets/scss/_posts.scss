@@ -2,6 +2,11 @@
   width: 100%;
   padding: 16px;
 
+  +.post-card {
+    border: none;
+    border-top: 1px solid $color-neutral-variant-50;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -20,14 +25,20 @@
 
   .tags {
     @extend .title-medium;
+    color: $color-link;
+
+    .tag {
+      &:before {
+        content: "#";
+      }
+
+      +.tag {
+        margin-left: 8px;
+      }
+    }
   }
 
   .date {
     @extend .title-small;
   }
-}
-
-.post-card+.post-card {
-  border: none;
-  border-top: 1px solid $color-neutral-variant-50;
 }
