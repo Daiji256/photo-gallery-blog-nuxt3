@@ -17,8 +17,4 @@ const pages = await queryContent('pages')
 	.where({ '_draft': false })
 	.sort({ 'date': 1 })
 	.find();
-
-definePageMeta({
-	layout: 'main-wrapper',
-});
 </script>

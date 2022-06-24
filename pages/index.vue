@@ -77,8 +77,4 @@ onMounted(() => {
 onBeforeUnmount(() => {
 	clearInterval(intervalId);
 });
-
-definePageMeta({
-	layout: 'main-wrapper',
-});
 </script>
