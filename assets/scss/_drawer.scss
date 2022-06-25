@@ -46,6 +46,17 @@
       padding-right: 16px;
       min-height: 56px;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      transition: 0.4s;
+
+      &:hover {
+        transition: 0.4s;
+        background-color: state($color-surface, $color-on-surface, $state-hover);
+      }
+
+      &:active {
+        transition: 0.2s;
+        background-color: state($color-surface, $color-on-surface, $state-pressed);
+      }
 
       .logo {
         display: grid;
@@ -68,25 +79,17 @@
       }
     }
 
-    @media (hover: hover) {
-      .drawer-menu {
+    .active {
+      background-color: $color-secondary-container;
+
+      &:hover {
         transition: 0.4s;
+        background-color: state($color-secondary-container, $color-on-surface-variant, $state-hover);
       }
 
-      .drawer-menu:hover {
-        transition: 0.4s;
-        background-color: $color-secondary-container;
-      }
-    }
-
-    @media (hover: none) {
-      .drawer-menu {
-        transition: 0.4s;
-      }
-
-      .drawer-menu:active {
+      &:active {
         transition: 0.2s;
-        background-color: $color-secondary-container;
+        background-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
       }
     }
   }
