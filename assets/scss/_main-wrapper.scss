@@ -1,5 +1,6 @@
 .main-wrapper {
   padding-top: 64px;
   width: min(100%, $screen-large-min);
+  min-height: calc(100vh - 64px);
   margin: 0 auto;
 }

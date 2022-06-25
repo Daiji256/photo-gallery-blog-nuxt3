@@ -1,0 +1,10 @@
+footer {
+  @extend .title-small;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  background-color: $color-surface-variant;
+  color: $color-on-surface-variant;
+}
