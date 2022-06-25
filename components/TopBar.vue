@@ -1,6 +1,6 @@
 <template>
 	<header v-bind:class='{ "on-scroll": isScroll }'>
-		<div class="menu" @click="onMenuClick">
+		<div class="menu" v-on:click="onMenuClick">
 			<svg height="24" width="24" v-bind:class='{ "transparent": isOpen }'>
 				<path fill="currentColor" d="M3 18V16H21V18ZM3 13V11H21V13ZM3 8V6H21V8Z" />
 			</svg>
@@ -22,9 +22,9 @@
 		</NuxtLink>
 	</header>
 	<div class="drawer" v-bind:class='{ "drawer-open": isOpen, "drawer-swipe": isSwipe }'>
-		<div class="drawer-scrim" @click="closeMenu"></div>
+		<div class="drawer-scrim" v-on:click="closeMenu"></div>
 		<div class="drawer-content" id="drawerContent">
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/") }' @click="closeMenu" to="/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/") }' v-on:click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -33,7 +33,7 @@
 				</div>
 				<div class="text">ホーム</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/posts/") }' @click="closeMenu"
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/posts/") }' v-on:click="closeMenu"
 				to="/posts/">
 				<div class="logo">
 					<svg height="24" width="24">
@@ -45,8 +45,8 @@
 					すべての投稿
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery/") }' @click="closeMenu"
-				to="/photo-gallery/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery/") }'
+				v-on:click="closeMenu" to="/photo-gallery/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -55,7 +55,7 @@
 				</div>
 				<div class="text">ギャラリー</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/tags/") }' @click="closeMenu"
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/tags/") }' v-on:click="closeMenu"
 				to="/tags/">
 				<div class="logo">
 					<svg height="24" width="24">
@@ -66,7 +66,7 @@
 				<div class="text">タグ</div>
 			</NuxtLink>
 			<hr class="line">
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/about/") }' @click="closeMenu"
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/about/") }' v-on:click="closeMenu"
 				to="/about/">
 				<div class="logo">
 					<svg height="24" width="24">
@@ -77,7 +77,7 @@
 				<div class="text">このブログについて</div>
 			</NuxtLink>
 			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/privacy-policy/") }'
-				@click="closeMenu" to="/privacy-policy/">
+				v-on:click="closeMenu" to="/privacy-policy/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
