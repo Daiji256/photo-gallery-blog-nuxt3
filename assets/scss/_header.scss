@@ -17,6 +17,17 @@ header {
     margin-left: 4px;
     margin-right: 12px;
     border-radius: 32px;
+    transition: 0.4s;
+
+    &:hover {
+      transition: 0.4s;
+      background-color: rgba($color-on-surface, $state-hover);
+    }
+
+    &:active {
+      transition: 0.2s;
+      background-color: rgba($color-on-surface, $state-pressed);
+    }
 
     svg {
       position: absolute;
@@ -42,6 +53,17 @@ header {
       display: inline-flex;
       border-radius: 32px;
       padding: 8px;
+      transition: 0.4s;
+
+      &:hover {
+        transition: 0.4s;
+        background-color: rgba($color-on-surface, $state-hover);
+      }
+
+      &:active {
+        transition: 0.2s;
+        background-color: rgba($color-on-surface, $state-pressed);
+      }
 
       .logo {
         display: grid;
@@ -61,46 +83,6 @@ header {
           margin-right: 8px;
         }
       }
-    }
-  }
-
-  @media (hover: hover) {
-    .menu {
-      transition: 0.4s;
-    }
-
-    .menu:hover {
-      transition: 0.4s;
-      background-color: $color-secondary-container;
-    }
-
-    .title {
-      transition: 0.4s;
-    }
-
-    .title:hover {
-      transition: 0.4s;
-      background-color: $color-secondary-container;
-    }
-  }
-
-  @media (hover: none) {
-    .menu {
-      transition: 0.4s;
-    }
-
-    .menu:active {
-      transition: 0.2s;
-      background-color: $color-secondary-container;
-    }
-
-    .title {
-      transition: 0.4s;
-    }
-
-    .title:active {
-      transition: 0.2s;
-      background-color: $color-secondary-container;
     }
   }
 }
