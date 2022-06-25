@@ -1,3 +1,5 @@
 .main-wrapper {
   padding-top: 64px;
+  width: min(100%, $screen-large-min);
+  margin: 0 auto;
 }
