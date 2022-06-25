@@ -19,9 +19,11 @@ header {
     border-radius: 32px;
     transition: 0.4s;
 
-    &:hover {
-      transition: 0.4s;
-      background-color: rgba($color-on-surface, $state-hover);
+    @media (hover: hover) {
+      &:hover {
+        transition: 0.4s;
+        background-color: rgba($color-on-surface, $state-hover);
+      }
     }
 
     &:active {
@@ -55,9 +57,11 @@ header {
       padding: 8px;
       transition: 0.4s;
 
-      &:hover {
-        transition: 0.4s;
-        background-color: rgba($color-on-surface, $state-hover);
+      @media (hover: hover) {
+        &:hover {
+          transition: 0.4s;
+          background-color: rgba($color-on-surface, $state-hover);
+        }
       }
 
       &:active {
