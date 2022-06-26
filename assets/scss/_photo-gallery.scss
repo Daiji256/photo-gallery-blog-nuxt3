@@ -11,5 +11,9 @@
       aspect-ratio: 1;
       object-fit: cover;
     }
+
+    @media screen and (min-width: $screen-medium-min) {
+      width: calc(100% / 3);
+    }
   }
 }
