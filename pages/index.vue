@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<div class="photo-slider">
-			<img v-bind:src="`${img1}`" v-bind:class='{ "fadein": isFadein, "fadeout": !isFadein, "quick": isQuick }'>
-			<img v-bind:src="`${img2}`" v-bind:class='{ "fadein": !isFadein, "fadeout": isFadein, "quick": isQuick }'>
+			<img v-bind:src="img1" v-bind:class='{ "fadein": isFadein, "fadeout": !isFadein, "quick": isQuick }'>
+			<img v-bind:src="img2" v-bind:class='{ "fadein": !isFadein, "fadeout": isFadein, "quick": isQuick }'>
 			<div class="indicator">
 				<div class="item" v-for="(_, index) in pickupPosts" v-on:click="setPage(index)">
 					<div class="circle" v-bind:class='{ "active": pageNum == index, "quick": isQuick }'></div>
