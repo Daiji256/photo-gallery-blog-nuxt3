@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/content'],
 	runtimeConfig: {
 		public: {
-			pickupPosts: ['/posts/test1', '/posts/test2', '/posts/test3'],
+			pickupPosts: ['/posts/test01', '/posts/test02', '/posts/test03'],
 		}
 	},
 })
