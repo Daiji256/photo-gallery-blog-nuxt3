@@ -4,20 +4,8 @@
 			<img v-bind:src="`${img1}`" v-bind:class='{ "fadein": isFadein, "fadeout": !isFadein, "quick": isQuick }'>
 			<img v-bind:src="`${img2}`" v-bind:class='{ "fadein": !isFadein, "fadeout": isFadein, "quick": isQuick }'>
 			<div class="indicator">
-				<div class="item" v-on:click="setPage(0)">
-					<div class="circle" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }'></div>
-				</div>
-				<div class="item" v-on:click="setPage(1)">
-					<div class="circle" v-bind:class='{ "active": pageNum == 1, "quick": isQuick }'></div>
-				</div>
-				<div class="item" v-on:click="setPage(2)">
-					<div class="circle" v-bind:class='{ "active": pageNum == 2, "quick": isQuick }'></div>
-				</div>
-				<div class="item" v-on:click="setPage(3)">
-					<div class="circle" v-bind:class='{ "active": pageNum == 3, "quick": isQuick }'></div>
-				</div>
-				<div class="item" v-on:click="setPage(4)">
-					<div class="circle" v-bind:class='{ "active": pageNum == 4, "quick": isQuick }'></div>
+				<div class="item" v-for="(_, index) in imgSrc" v-on:click="setPage(index)">
+					<div class="circle" v-bind:class='{ "active": pageNum == index, "quick": isQuick }'></div>
 				</div>
 			</div>
 		</div>
@@ -64,6 +52,8 @@ const imgSrc = [
 	"/images/sample-03.jpg",
 	"/images/sample-04.jpg",
 	"/images/sample-05.jpg",
+	"/images/sample-06.jpg",
+	"/images/sample-07.jpg",
 ];
 const pageNum = ref(0);
 const img1 = ref(imgSrc[0]);
@@ -84,7 +74,7 @@ const slider = () => {
 }
 
 const setSlideInterval = () => {
-	intervalId = setInterval(slider, 3000);
+	intervalId = setInterval(slider, 10000);
 }
 
 const setPage = (setPageNum: number) => {
