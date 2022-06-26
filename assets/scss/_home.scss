@@ -23,15 +23,7 @@
     transition: 2s ease-in-out;
   }
 
-  .quick-out {
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.2s ease-in-out;
-  }
-
-  .quick-in {
-    visibility: visible;
-    opacity: 1;
+  .quick {
     transition: 0.2s ease-in-out;
   }
 

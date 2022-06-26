@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<div class="photo-slider">
-			<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
-			<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
+			<img v-bind:src="`${img1}`" v-bind:class='{ "fadein": isFadein, "fadeout": !isFadein, "quick": isQuick }'>
+			<img v-bind:src="`${img2}`" v-bind:class='{ "fadein": !isFadein, "fadeout": isFadein, "quick": isQuick }'>
 			<div class="indicator">
 				<div class="item" v-on:click="setPage(0)">
 					<div class="circle" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }'></div>
@@ -25,10 +25,10 @@
 		ピックアップ
 		<div class="post-card" v-for="post in pickupPosts">
 			<nuxt-link v-bind:to="post._path">
-				<img v-bind:src="`${post.image}`">
+				<img v-bind:src="`${post.image} `">
 				<div class="title">{{ post.title }}</div>
 				<div class="tags">
-					<nuxt-link class="tag" v-for="tag in post.tags" v-bind:to="`/tags/${tag}/`">
+					<nuxt-link class="tag" v-for="tag in post.tags" v-bind:to="`/ tags / ${tag} /`">
 						{{ tag }}
 					</nuxt-link>
 				</div>
@@ -66,42 +66,36 @@ const imgSrc = [
 	"/images/sample-05.jpg",
 ];
 const pageNum = ref(0);
+const img1 = ref(imgSrc[0]);
+const img2 = ref(imgSrc[1]);
+const isFadein = ref(true);
 const isQuick = ref(false);
 let intervalId = null;
-let imgFlg: boolean = false;
 
 const slider = () => {
 	pageNum.value = (pageNum.value + 1) % imgSrc.length;
-	isQuick.value = false;
-	if (imgFlg) {
-		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum.value]}`);
-		document.getElementById("slidePhoto1").className = "fadein";
-		document.getElementById("slidePhoto2").className = "fadeout";
+	if (isFadein.value) {
+		img2.value = imgSrc[pageNum.value];
 	} else {
-		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum.value]}`);
-		document.getElementById("slidePhoto2").className = "fadein";
-		document.getElementById("slidePhoto1").className = "fadeout";
+		img1.value = imgSrc[pageNum.value];
 	}
-	imgFlg = !imgFlg;
+	isQuick.value = false;
+	isFadein.value = !isFadein.value;
 }
 
 const setSlideInterval = () => {
-	intervalId = setInterval(slider, 10000);
+	intervalId = setInterval(slider, 3000);
 }
 
 const setPage = (setPageNum: number) => {
 	pageNum.value = setPageNum;
-	isQuick.value = true;
-	if (imgFlg) {
-		document.getElementById("slidePhoto1").setAttribute('src', `${imgSrc[pageNum.value]}`);
-		document.getElementById("slidePhoto1").className = "quick-in";
-		document.getElementById("slidePhoto2").className = "quick-out";
+	if (isFadein.value) {
+		img2.value = imgSrc[pageNum.value];
 	} else {
-		document.getElementById("slidePhoto2").setAttribute('src', `${imgSrc[pageNum.value]}`);
-		document.getElementById("slidePhoto2").className = "quick-in";
-		document.getElementById("slidePhoto1").className = "quick-out";
+		img1.value = imgSrc[pageNum.value];
 	}
-	imgFlg = !imgFlg;
+	isQuick.value = true;
+	isFadein.value = !isFadein.value;
 	clearInterval(intervalId);
 	setSlideInterval();
 }
