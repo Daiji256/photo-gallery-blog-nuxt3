@@ -1,28 +1,63 @@
 <template>
-	<div class="photo-slider">
-		<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
-		<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
-		<div class="indicator">
-			<div class="item" v-on:click="setPage(0)">
-				<div class="circle" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }'></div>
+	<div>
+		<div class="photo-slider">
+			<img src="/images/sample-01.jpg" id="slidePhoto1" class="fadein">
+			<img src="/images/sample-02.jpg" id="slidePhoto2" class="fadeout">
+			<div class="indicator">
+				<div class="item" v-on:click="setPage(0)">
+					<div class="circle" v-bind:class='{ "active": pageNum == 0, "quick": isQuick }'></div>
+				</div>
+				<div class="item" v-on:click="setPage(1)">
+					<div class="circle" v-bind:class='{ "active": pageNum == 1, "quick": isQuick }'></div>
+				</div>
+				<div class="item" v-on:click="setPage(2)">
+					<div class="circle" v-bind:class='{ "active": pageNum == 2, "quick": isQuick }'></div>
+				</div>
+				<div class="item" v-on:click="setPage(3)">
+					<div class="circle" v-bind:class='{ "active": pageNum == 3, "quick": isQuick }'></div>
+				</div>
+				<div class="item" v-on:click="setPage(4)">
+					<div class="circle" v-bind:class='{ "active": pageNum == 4, "quick": isQuick }'></div>
+				</div>
 			</div>
-			<div class="item" v-on:click="setPage(1)">
-				<div class="circle" v-bind:class='{ "active": pageNum == 1, "quick": isQuick }'></div>
-			</div>
-			<div class="item" v-on:click="setPage(2)">
-				<div class="circle" v-bind:class='{ "active": pageNum == 2, "quick": isQuick }'></div>
-			</div>
-			<div class="item" v-on:click="setPage(3)">
-				<div class="circle" v-bind:class='{ "active": pageNum == 3, "quick": isQuick }'></div>
-			</div>
-			<div class="item" v-on:click="setPage(4)">
-				<div class="circle" v-bind:class='{ "active": pageNum == 4, "quick": isQuick }'></div>
-			</div>
+		</div>
+		<!-- TODO: -->
+		ピックアップ
+		<div class="post-card" v-for="post in pickupPosts">
+			<nuxt-link v-bind:to="post._path">
+				<img v-bind:src="`${post.image}`">
+				<div class="title">{{ post.title }}</div>
+				<div class="tags">
+					<nuxt-link class="tag" v-for="tag in post.tags" v-bind:to="`/tags/${tag}/`">
+						{{ tag }}
+					</nuxt-link>
+				</div>
+				<div class="date">{{ dateJa(post.date) }}</div>
+			</nuxt-link>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+const posts = await queryContent('posts')
+	.where({ '_draft': false })
+	.only(['_path', 'title', 'date', 'tags', 'image'])
+	.sort({ 'date': -1 })
+	.find();
+const pickupPosts = posts.filter(post => {
+	return useRuntimeConfig().pickupPosts.some(path => path === post._path);
+});
+
+// TODO: 共通化する
+const dateJa = (date: string) => {
+	return date
+		.substring(0, date.indexOf('T'))
+		.replaceAll('-0', '-')
+		.replace('-', '年')
+		.replace('-', '月')
+		.concat('日');
+}
+
 const imgSrc = [
 	"/images/sample-01.jpg",
 	"/images/sample-02.jpg",

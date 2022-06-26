@@ -5,4 +5,9 @@ export default defineNuxtConfig({
 	target: 'static',
 	css: ['modern-css-reset', '~/assets/scss/main.scss'],
 	modules: ['@nuxt/content'],
+	runtimeConfig: {
+		public: {
+			pickupPosts: ['/posts/test1', '/posts/test2', '/posts/test3'],
+		}
+	},
 })
