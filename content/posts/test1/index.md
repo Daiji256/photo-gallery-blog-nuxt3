@@ -1,7 +1,8 @@
 ---
-title: 日本語でタイトルを書いてみた
+title: 'ドラゴンボールの世界で戦ってそうな場所'
 date: 2022-06-21
-tags: ['旅行', '公園', 'ポケモン']
+tags: ['ドラゴンボール', '大自然', '旅行']
+image: '/images/sample-02.jpg'
 ---
 
 # 日本語 English (H1)
@@ -26,5 +27,6 @@ tags: ['旅行', '公園', 'ポケモン']
 
 ---
 
-> 引用
->> 引用
+![](/images/sample-02.jpg)
+![](/images/sample-17.jpg)
+![](/images/sample-20.jpg)

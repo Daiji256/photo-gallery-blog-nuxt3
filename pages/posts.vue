@@ -2,7 +2,7 @@
 	<div class="post-cards">
 		<div class="post-card" v-for="post in posts">
 			<nuxt-link v-bind:to="post._path">
-				<img src="/images/sample-20.jpg">
+				<img v-bind:src="`${post.image}`">
 				<div class="title">{{ post.title }}</div>
 				<div class="tags">
 					<nuxt-link class="tag" v-for="tag in post.tags" v-bind:to="`/tags/${tag}/`">
@@ -18,7 +18,7 @@
 <script setup lang="ts">
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
-	.only(['_path', 'title', 'date', 'tags'])
+	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.sort({ 'date': -1 })
 	.find();
 
