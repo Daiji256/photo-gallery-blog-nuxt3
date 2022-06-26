@@ -1,7 +1,7 @@
 ---
-title: 'Title 3'
-date: 2022-01-02
-image: '/images/sample-04.jpg'
+title: 'Title'
+date: 2022-01-03
+image: '/images/sample-03.jpg'
 ---
 
 text
