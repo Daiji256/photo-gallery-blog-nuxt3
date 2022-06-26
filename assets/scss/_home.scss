@@ -12,21 +12,25 @@
   }
 
   .fadeout {
+    visibility: hidden;
     opacity: 0;
     transition: 2s ease-in-out;
   }
 
   .fadein {
+    visibility: visible;
     opacity: 1;
     transition: 2s ease-in-out;
   }
 
   .quick-out {
+    visibility: hidden;
     opacity: 0;
     transition: 0.2s ease-in-out;
   }
 
   .quick-in {
+    visibility: visible;
     opacity: 1;
     transition: 0.2s ease-in-out;
   }
