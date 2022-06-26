@@ -1,0 +1,14 @@
+.tags {
+  @extend .title-medium;
+
+  .tag {
+    text-decoration: none;
+    color: $color-link;
+    display: inline-block;
+    margin-right: 8px;
+
+    &:before {
+      content: "#";
+    }
+  }
+}
