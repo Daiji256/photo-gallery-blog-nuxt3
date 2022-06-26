@@ -4,7 +4,7 @@
 			<img v-bind:src="`${img1}`" v-bind:class='{ "fadein": isFadein, "fadeout": !isFadein, "quick": isQuick }'>
 			<img v-bind:src="`${img2}`" v-bind:class='{ "fadein": !isFadein, "fadeout": isFadein, "quick": isQuick }'>
 			<div class="indicator">
-				<div class="item" v-for="(_, index) in imgSrc" v-on:click="setPage(index)">
+				<div class="item" v-for="(_, index) in pickupPosts" v-on:click="setPage(index)">
 					<div class="circle" v-bind:class='{ "active": pageNum == index, "quick": isQuick }'></div>
 				</div>
 			</div>
@@ -46,28 +46,19 @@ const dateJa = (date: string) => {
 		.concat('日');
 }
 
-const imgSrc = [
-	"/images/sample-01.jpg",
-	"/images/sample-02.jpg",
-	"/images/sample-03.jpg",
-	"/images/sample-04.jpg",
-	"/images/sample-05.jpg",
-	"/images/sample-06.jpg",
-	"/images/sample-07.jpg",
-];
 const pageNum = ref(0);
-const img1 = ref(imgSrc[0]);
-const img2 = ref(imgSrc[1]);
+const img1 = ref(pickupPosts[0].image);
+const img2 = ref(pickupPosts[1].image);
 const isFadein = ref(true);
 const isQuick = ref(false);
 let intervalId = null;
 
 const slider = () => {
-	pageNum.value = (pageNum.value + 1) % imgSrc.length;
+	pageNum.value = (pageNum.value + 1) % pickupPosts.length;
 	if (isFadein.value) {
-		img2.value = imgSrc[pageNum.value];
+		img2.value = pickupPosts[pageNum.value].image;
 	} else {
-		img1.value = imgSrc[pageNum.value];
+		img1.value = pickupPosts[pageNum.value].image;
 	}
 	isQuick.value = false;
 	isFadein.value = !isFadein.value;
@@ -80,9 +71,9 @@ const setSlideInterval = () => {
 const setPage = (setPageNum: number) => {
 	pageNum.value = setPageNum;
 	if (isFadein.value) {
-		img2.value = imgSrc[pageNum.value];
+		img2.value = pickupPosts[pageNum.value].image;
 	} else {
-		img1.value = imgSrc[pageNum.value];
+		img1.value = pickupPosts[pageNum.value].image;
 	}
 	isQuick.value = true;
 	isFadein.value = !isFadein.value;
