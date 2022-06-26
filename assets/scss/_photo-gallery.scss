@@ -1,0 +1,15 @@
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+
+  .photo-card {
+    width: 50%;
+    -webkit-tap-highlight-color: transparent;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+}
