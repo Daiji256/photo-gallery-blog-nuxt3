@@ -18,8 +18,8 @@
 <script setup lang="ts">
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
-	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.sort({ 'date': -1 })
+	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.find();
 
 const dateJa = (date: string) => {
