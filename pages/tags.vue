@@ -22,7 +22,4 @@ const tags = Object.entries(
 )
 	.map(([name, count]) => ({ name, count }))
 	.sort((a, b) => { return b.count - a.count; });
-
-
-const hoge = ref(tags);
 </script>
