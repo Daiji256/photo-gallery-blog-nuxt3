@@ -16,8 +16,10 @@
 </template>
 
 <script setup lang="ts">
+const tag = useRoute().query.tag;
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
+	.where({ tags: { $contains: tag } })
 	.sort({ 'date': -1 })
 	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.find();
