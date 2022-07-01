@@ -39,7 +39,7 @@ const tags = Object.entries(
 	.map(([name, count]) => ({ name, count }))
 	.sort((a, b) => { return b.count - a.count; });
 
-const slug = useRoute().params.slug || []
+const slug = useRoute().params.slug || [];
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
 	.where({ 'tags': { '$containsAny': slug } })
