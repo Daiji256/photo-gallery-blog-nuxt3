@@ -6,7 +6,9 @@
 		<img v-bind:src="content.image" width="250px">
 		<!-- TODO: ContentRendererMarkdown で警告 -->
 		<ContentRenderer v-bind:value="content">
-			<ContentRendererMarkdown v-bind:value="content" />
+			<template #empty>
+				<p>No content found.</p>
+			</template>
 		</ContentRenderer>
 	</div>
 </template>
