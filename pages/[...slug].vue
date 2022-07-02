@@ -1,20 +1,15 @@
 <template>
 	<div>
-		<div>{{ content.title }}</div>
-		<div>{{ content.date }}</div>
-		<div>{{ content.tags }}</div>
-		<img v-bind:src="content.image" width="250px">
-		<!-- TODO: ContentRendererMarkdown で警告 -->
-		<ContentRenderer v-bind:value="content">
-			<template #empty>
-				<p>No content found.</p>
-			</template>
-		</ContentRenderer>
+		<ContentDoc v-slot="{ doc }">
+			<div>{{ doc.title }}</div>
+			<div>{{ doc.date }}</div>
+			<div>{{ doc.tags }}</div>
+			<!-- TODO: リロードしないと画像が表示されない -->
+			<img v-bind:src="doc.image" width="250px">
+			<ContentRenderer :value="doc" />
+		</ContentDoc>
 	</div>
 </template>
 
 <script setup lang="ts">
-// TODO: queryContent の引数で警告
-const content = await queryContent(useRoute().path).findOne();
-// TODO: content 内の value でアキの処理をする
 </script>
