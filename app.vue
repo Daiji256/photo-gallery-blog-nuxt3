@@ -5,11 +5,19 @@
 	</div>
 	<FooterMenu />
 </template>
-<script setup>
+<script setup lang="ts">
 useHead({
-	htmlAttrs: [{ lang: 'ja' }],
+	htmlAttrs: [
+		{ lang: 'ja' },
+		{ prefix: 'og: http://ogp.me/ns#' },
+	],
+	charset: 'utf-8',
+	viewport: 'width=device-width, initial-scale=1.0',
+	title: 'Photo Gallery',
 	meta: [
-		{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+		{ name: 'twitter:card', content: 'summary_large_image' },
+		{ name: 'twitter:site', content: '@Daiji256' },
+		{ name: 'og:site_name', content: 'Photo Gallery' },
 	],
 	link: [
 		{
@@ -26,5 +34,5 @@ useHead({
 			href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700',
 		},
 	],
-})
+});
 </script>
