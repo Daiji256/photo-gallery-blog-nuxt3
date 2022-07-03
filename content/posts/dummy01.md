@@ -87,7 +87,7 @@ https://example.com
 
 ![](/images/sample-01.jpg)
 ![](/images/sample-02.jpg)
-<img src="/images/sample-03.jpg" width="250px">
+<img src="/images/sample-03.jpg" width=250>
 
 普通の日本語の文章。
 

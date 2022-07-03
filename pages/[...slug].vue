@@ -4,8 +4,7 @@
 			<div>{{ doc.title }}</div>
 			<div>{{ doc.date }}</div>
 			<div>{{ doc.tags }}</div>
-			<!-- TODO: リロードしないと画像が表示されない -->
-			<img v-bind:src="doc.image" width="250px">
+			<img v-bind:src="doc.image" width=250>
 			<ContentRenderer v-bind:value="doc" />
 		</ContentDoc>
 	</div>
