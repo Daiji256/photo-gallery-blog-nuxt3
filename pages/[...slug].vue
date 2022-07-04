@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="post">
 		<ContentDoc v-slot="{ doc }">
 			<div>{{ doc.title }}</div>
 			<div>{{ doc.date }}</div>
