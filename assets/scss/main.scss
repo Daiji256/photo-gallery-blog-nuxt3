@@ -11,4 +11,8 @@ body {
   text-align: justify;
   color: $color-on-background;
   background-color: $color-background;
+
+  code {
+    font-family: $font-family-monospace;
+  }
 }
