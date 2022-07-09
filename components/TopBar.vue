@@ -45,8 +45,8 @@
 					すべての投稿
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery/") }'
-				v-on:click="closeMenu" to="/photo-gallery/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery/") }' v-on:click="closeMenu"
+				to="/photo-gallery/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -76,8 +76,8 @@
 				</div>
 				<div class="text">このブログについて</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/privacy-policy/") }'
-				v-on:click="closeMenu" to="/privacy-policy/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/privacy-policy/") }' v-on:click="closeMenu"
+				to="/privacy-policy/">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -95,9 +95,9 @@
 				</div>
 				<div class="text">お問い合わせ</div>
 				<div class="open-in-new">
-					<svg height="20" width="20">
+					<svg height="24" width="24">
 						<path fill="currentColor"
-							d="M17.5 9.917V15.75Q17.5 16.479 16.99 16.99Q16.479 17.5 15.75 17.5H4.25Q3.521 17.5 3.01 16.99Q2.5 16.479 2.5 15.75V4.25Q2.5 3.521 3.01 3.01Q3.521 2.5 4.25 2.5H10.083V4.25H4.25Q4.25 4.25 4.25 4.25Q4.25 4.25 4.25 4.25V15.75Q4.25 15.75 4.25 15.75Q4.25 15.75 4.25 15.75H15.75Q15.75 15.75 15.75 15.75Q15.75 15.75 15.75 15.75V9.917ZM8.104 13.125 6.875 11.896 14.521 4.25H11.833V2.5H17.5V8.167H15.75V5.479Z" />
+							d="M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413Q19.825 21 19 21Zm4.7-5.3-1.4-1.4L17.6 5H14V3h7v7h-2V6.4Z" />
 					</svg>
 				</div>
 			</a>
@@ -110,9 +110,9 @@
 				</div>
 				<div class="text">RSS</div>
 				<div class="open-in-new">
-					<svg height="20" width="20">
+					<svg height="24" width="24">
 						<path fill="currentColor"
-							d="M17.5 9.917V15.75Q17.5 16.479 16.99 16.99Q16.479 17.5 15.75 17.5H4.25Q3.521 17.5 3.01 16.99Q2.5 16.479 2.5 15.75V4.25Q2.5 3.521 3.01 3.01Q3.521 2.5 4.25 2.5H10.083V4.25H4.25Q4.25 4.25 4.25 4.25Q4.25 4.25 4.25 4.25V15.75Q4.25 15.75 4.25 15.75Q4.25 15.75 4.25 15.75H15.75Q15.75 15.75 15.75 15.75Q15.75 15.75 15.75 15.75V9.917ZM8.104 13.125 6.875 11.896 14.521 4.25H11.833V2.5H17.5V8.167H15.75V5.479Z" />
+							d="M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413Q19.825 21 19 21Zm4.7-5.3-1.4-1.4L17.6 5H14V3h7v7h-2V6.4Z" />
 					</svg>
 				</div>
 			</a>
