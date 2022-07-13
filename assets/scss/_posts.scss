@@ -1,3 +1,18 @@
+.tags {
+  @extend .title-medium;
+
+  .tag {
+    text-decoration: none;
+    color: $color-link;
+    display: inline-block;
+    margin-right: 8px;
+
+    &:before {
+      content: "#";
+    }
+  }
+}
+
 .post-card {
   width: 100%;
   padding: 16px;
