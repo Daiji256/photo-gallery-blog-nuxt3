@@ -17,11 +17,8 @@
 .post-card {
   width: 100%;
   padding: 16px;
-
-  +.post-card {
-    border: none;
-    border-top: 1px solid $color-neutral-variant-50;
-  }
+  border: none;
+  border-top: 1px solid $color-neutral-variant-50;
 
   a {
     text-decoration: none;
