@@ -11,13 +11,13 @@
 					<NuxtLink v-bind:to="post._path">
 						<img v-bind:src="`${post.image}`">
 						<div class="title">{{ post.title }}</div>
-						<div class="tags">
-							<NuxtLink class="tag" v-for="tag in post.tags" v-bind:to="`/posts?tag=${tag}`">
-								{{ tag }}
-							</NuxtLink>
-						</div>
-						<div class="date">{{ dateJa(post.date) }}</div>
 					</NuxtLink>
+					<div class="tags">
+						<NuxtLink class="tag" v-for="tag in post.tags" v-bind:to="`/posts?tag=${tag}`" v-on:click="onClickTag(tag)">
+							{{ tag }}
+						</NuxtLink>
+					</div>
+					<div class="date">{{ dateJa(post.date) }}</div>
 				</div>
 			</div>
 		</div>

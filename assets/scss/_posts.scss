@@ -2,6 +2,7 @@
   @extend .title-medium;
 
   .tag {
+    cursor: pointer;
     text-decoration: none;
     color: $color-link;
     display: inline-block;
@@ -36,21 +37,6 @@
 
   .title {
     @extend .title-large;
-  }
-
-  .tags {
-    @extend .title-medium;
-    color: $color-link;
-
-    .tag {
-      &:before {
-        content: "#";
-      }
-
-      +.tag {
-        margin-left: 8px;
-      }
-    }
   }
 
   .date {
