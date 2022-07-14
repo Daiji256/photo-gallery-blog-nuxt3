@@ -70,10 +70,7 @@ ___
 ---
 
 [example-com](https://example.com)  
-[example-com](example)  
-https://example.com
-
-[example]: https://example.com
+[dummy02](dummy02)  
 
 ~~取り消し線~~
 
