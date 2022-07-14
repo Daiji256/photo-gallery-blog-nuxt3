@@ -12,16 +12,16 @@
 		<!-- TODO: -->
 		ピックアップ
 		<div class="post-card" v-for="post in pickupPosts">
-			<nuxt-link v-bind:to="post._path">
+			<NuxtLink v-bind:to="post._path">
 				<img v-bind:src="`${post.image} `">
 				<div class="title">{{ post.title }}</div>
 				<div class="tags">
-					<nuxt-link class="tag" v-for="tag in post.tags" v-bind:to="`/posts?tag=${tag}`">
+					<NuxtLink class="tag" v-for="tag in post.tags" v-bind:to="`/posts?tag=${tag}`">
 						{{ tag }}
-					</nuxt-link>
+					</NuxtLink>
 				</div>
 				<div class="date">{{ dateJa(post.date) }}</div>
-			</nuxt-link>
+			</NuxtLink>
 		</div>
 	</div>
 </template>

@@ -1,9 +1,9 @@
 <template>
 	<div class="photo-gallery">
 		<div class="photo-card" v-for="post in posts">
-			<nuxt-link v-bind:to="post._path">
+			<NuxtLink v-bind:to="post._path">
 				<img v-bind:src="`${post.image}`">
-			</nuxt-link>
+			</NuxtLink>
 		</div>
 	</div>
 </template>
