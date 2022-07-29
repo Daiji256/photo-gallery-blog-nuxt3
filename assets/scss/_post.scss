@@ -1,6 +1,34 @@
 .post {
   @extend .body-medium;
 
+  .top-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .top-title {
+    margin-top: 16px;
+  }
+
+  .top-tag {
+    @extend .title-small;
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-link;
+    display: inline-block;
+    margin-right: 8px;
+
+    &:before {
+      content: "#";
+    }
+  }
+
+  .top-date {
+    @extend .title-small;
+    margin-bottom: 16px;
+  }
+
   h1 {
     @extend .headline-large;
     margin: 0;
