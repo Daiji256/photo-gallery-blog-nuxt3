@@ -42,20 +42,28 @@ const tags = Object.entries(
 	.map(([name, count]) => ({ name, count }))
 	.sort((a, b) => { return b.count - a.count; });
 
-const queryTags = [useRoute().query.tag].flat().filter(tag => tag != null);
+const getQueryTags = () => {
+	return [useRoute().query.tag].flat().filter(tag => tag != null);
+}
+
+const queryTags = ref(getQueryTags());
+
+watch(() => useRoute().query, (query) => {
+	queryTags.value = getQueryTags();
+});
 
 const onClickTag = (tagName) => {
-	if (queryTags.includes(tagName)) {
-		queryTags.splice(queryTags.indexOf(tagName), 1);
+	const newQueryTags = queryTags.value;
+	if (newQueryTags.includes(tagName)) {
+		newQueryTags.splice(newQueryTags.indexOf(tagName), 1);
 	} else {
-		queryTags.push(tagName);
+		newQueryTags.push(tagName);
 	}
-	useRouter().push({ query: { tag: queryTags } });
+	useRouter().push({ query: { tag: newQueryTags } });
 }
 
 const containsTag = (postTags) => {
-	if (queryTags.length === 0) return true;
-	return queryTags.some(tag => postTags.includes(tag));
+	return queryTags.value.length === 0 || queryTags.value.some(tag => postTags.includes(tag));
 }
 
 const dateJa = (date: string) => {
