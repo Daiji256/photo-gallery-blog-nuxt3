@@ -3,9 +3,9 @@
 		<ContentDoc v-slot="{ doc }">
 			<img v-bind:src="doc.image" class="top-image">
 			<h1 class="top-title">{{ doc.title }}</h1>
-			<div class="top-tag" v-for="tag in doc.tags">
+			<NuxtLink class="top-tag" v-for="tag in doc.tags" v-bind:to="`/posts?tag=${tag}`">
 				{{ tag }}
-			</div>
+			</NuxtLink>
 			<div class="top-date">{{ dateJa(doc.date) }}</div>
 
 			<ContentRenderer v-bind:value="doc" />
