@@ -9,6 +9,7 @@
 
   .top-title {
     margin-top: 16px;
+    padding-top: 0;
   }
 
   .top-tag {
@@ -31,14 +32,10 @@
 
   h1 {
     @extend .headline-large;
-    margin: 0;
-    padding: 0;
   }
 
   h2 {
     @extend .headline-medium;
-    margin: 0;
-    padding: 0;
   }
 
   h3,
@@ -46,8 +43,6 @@
   h5,
   h6 {
     @extend .headline-small;
-    margin: 0;
-    padding: 0;
   }
 
   h2,
@@ -60,5 +55,15 @@
       text-decoration: none;
       pointer-events: none;
     }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: -64px 0 0 0;
+    padding: 64px 0 0 0;
   }
 }
