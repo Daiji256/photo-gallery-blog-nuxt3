@@ -1,11 +1,12 @@
+.top-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
 .post {
   @extend .body-medium;
-
-  .top-image {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
+  margin: 0 24px;
 
   .top-title {
     margin: 8px 0;
