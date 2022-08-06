@@ -23,7 +23,7 @@
 	</header>
 	<div class="drawer" v-bind:class='{ "drawer-open": isOpen, "drawer-swipe": isSwipe }'>
 		<div class="drawer-scrim" v-on:click="closeMenu"></div>
-		<div class="drawer-content" id="drawerContent">
+		<div class="drawer-content">
 			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/") }' v-on:click="closeMenu" to="/">
 				<div class="logo">
 					<svg height="24" width="24">
