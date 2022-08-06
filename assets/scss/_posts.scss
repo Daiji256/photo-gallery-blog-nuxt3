@@ -1,8 +1,7 @@
 .tags {
-  @extend .title-medium;
+  @extend .label-large;
 
   .tag {
-    @extend .label-large;
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
