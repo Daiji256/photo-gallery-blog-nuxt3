@@ -1,8 +1,9 @@
 <template>
 	<div>
 		<div class="tags">
-			<div class="tag" v-for="tag in tags" v-on:click="onClickTag(tag.name)">
-				{{ tag.name }} ({{ tag.count }})
+			<div class="tag" v-for="tag in tags" v-on:click="onClickTag(tag.name)"
+				v-bind:class='{ "unselected": !isSelected(tag.name), "selected": isSelected(tag.name) }'>
+				{{ tag.name }}
 			</div>
 		</div>
 		<div class="post-cards">
@@ -52,9 +53,13 @@ watch(() => useRoute().query, (query) => {
 	queryTags.value = getQueryTags();
 });
 
+const isSelected = (tagName) => {
+	return queryTags.value.includes(tagName);
+}
+
 const onClickTag = (tagName) => {
 	const newQueryTags = queryTags.value;
-	if (newQueryTags.includes(tagName)) {
+	if (isSelected(tagName)) {
 		newQueryTags.splice(newQueryTags.indexOf(tagName), 1);
 	} else {
 		newQueryTags.push(tagName);
