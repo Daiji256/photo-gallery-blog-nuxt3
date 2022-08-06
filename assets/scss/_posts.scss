@@ -1,3 +1,29 @@
+.tags-filter {
+  cursor: pointer;
+  display: inline-flex;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 8px;
+
+  .logo {
+    display: grid;
+    align-items: center;
+  }
+
+  svg {
+    transition: transform 0.2s;
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .text {
+    @extend .label-large;
+    display: grid;
+    align-items: center;
+  }
+}
+
 .tags {
   @extend .label-large;
 
@@ -41,6 +67,11 @@
       background-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
     }
   }
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
 }
 
 .post-card {
