@@ -46,17 +46,14 @@
       padding-right: 16px;
       min-height: 56px;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      transition: 0.4s;
 
       @media (hover: hover) {
         &:hover {
-          transition: 0.4s;
           background-color: state($color-surface, $color-on-surface, $state-hover);
         }
       }
 
       &:active {
-        transition: 0.2s;
         background-color: state($color-surface, $color-on-surface, $state-pressed);
       }
 
@@ -85,13 +82,11 @@
 
       @media (hover: hover) {
         &:hover {
-          transition: 0.4s;
           background-color: state($color-secondary-container, $color-on-surface-variant, $state-hover);
         }
       }
 
       &:active {
-        transition: 0.2s;
         background-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
       }
     }

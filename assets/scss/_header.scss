@@ -8,7 +8,7 @@ header {
   user-select: none;
   background-color: $color-surface;
   transition-timing-function: ease-in-out;
-  transition: background-color 0.2s;
+  transition: background-color 0.4s;
 
   .menu {
     position: relative;
@@ -17,17 +17,14 @@ header {
     margin-left: 4px;
     margin-right: 12px;
     border-radius: 32px;
-    transition: 0.4s;
 
     @media (hover: hover) {
       &:hover {
-        transition: 0.4s;
         background-color: rgba($color-on-surface, $state-hover);
       }
     }
 
     &:active {
-      transition: 0.2s;
       background-color: rgba($color-on-surface, $state-pressed);
     }
 
@@ -35,7 +32,6 @@ header {
       position: absolute;
       top: 25%;
       left: 25%;
-      transition: 0.4s;
     }
 
     .transparent {
@@ -55,17 +51,14 @@ header {
       display: inline-flex;
       border-radius: 32px;
       padding: 8px;
-      transition: 0.4s;
 
       @media (hover: hover) {
         &:hover {
-          transition: 0.4s;
           background-color: rgba($color-on-surface, $state-hover);
         }
       }
 
       &:active {
-        transition: 0.2s;
         background-color: rgba($color-on-surface, $state-pressed);
       }
 
