@@ -1,5 +1,6 @@
 .post-card {
-  width: 100%;
+  width: calc(100% - 32px);
+  margin: 0 16px 12px 16px;
   border-radius: 12px;
   overflow: hidden;
   background-color: $color-surface;
