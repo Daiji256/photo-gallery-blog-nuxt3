@@ -9,8 +9,8 @@
 					d="M3 18V16H16V18ZM3 13V11H13V13ZM3 8V6H16V8ZM19.6 17 14.6 12 19.6 7 21 8.4 17.4 12 21 15.6Z" />
 			</svg>
 		</div>
-		<NuxtLink class="title-box" to="/" v-on:click="closeMenu">
-			<div class="title">
+		<div class="header-box">
+			<NuxtLink class="title" to="/" v-on:click="closeMenu">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -18,8 +18,8 @@
 					</svg>
 				</div>
 				<div class="text">Photo Gallery</div>
-			</div>
-		</NuxtLink>
+			</NuxtLink>
+		</div>
 	</header>
 	<div class="drawer" v-bind:class='{ "drawer-open": isOpen, "drawer-swipe": isSwipe }'>
 		<div class="drawer-scrim" v-on:click="closeMenu"></div>
