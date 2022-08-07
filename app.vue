@@ -5,6 +5,7 @@
 	</div>
 	<FooterMenu />
 </template>
+
 <script setup lang="ts">
 useHead({
 	htmlAttrs: [
