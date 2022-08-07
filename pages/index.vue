@@ -11,17 +11,11 @@
 		</div>
 		<!-- TODO: -->
 		ピックアップ
-		<div class="post-card" v-for="post in pickupPosts">
-			<NuxtLink v-bind:to="post._path">
-				<img v-bind:src="`${post.image} `">
-				<div class="title">{{ post.title }}</div>
-			</NuxtLink>
-			<div class="tags">
-				<NuxtLink class="tag" v-for="tag in post.tags" v-bind:to="`/posts?tag=${tag}`">
-					{{ tag }}
-				</NuxtLink>
+		<div v-for="post in pickupPosts">
+			<div class="post-card">
+				<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
+					v-bind:image="post.image" />
 			</div>
-			<div class="date">{{ dateJa(post.date) }}</div>
 		</div>
 	</div>
 </template>
@@ -35,16 +29,6 @@ const posts = await queryContent('posts')
 const pickupPosts = posts.filter(post => {
 	return useRuntimeConfig().pickupPosts.some(path => path === post._path);
 });
-
-// TODO: 共通化する
-const dateJa = (date: string) => {
-	return date
-		.substring(0, date.indexOf('T'))
-		.replaceAll('-0', '-')
-		.replace('-', '年')
-		.replace('-', '月')
-		.concat('日');
-}
 
 const pageNum = ref(0);
 const img1 = ref(pickupPosts[0].image);
