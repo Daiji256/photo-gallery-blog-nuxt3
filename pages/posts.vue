@@ -17,16 +17,8 @@
 		<div class="post-cards">
 			<div v-for="post in posts">
 				<div class="post-card" v-if="containsTag(post.tags)">
-					<NuxtLink v-bind:to="post._path">
-						<img v-bind:src="`${post.image}`">
-						<div class="title">{{ post.title }}</div>
-					</NuxtLink>
-					<div class="tags">
-						<NuxtLink class="tag" v-for="tag in post.tags" v-bind:to="`/posts?tag=${tag}`" v-on:click="onClickTag(tag)">
-							{{ tag }}
-						</NuxtLink>
-					</div>
-					<div class="date">{{ dateJa(post.date) }}</div>
+					<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
+						v-bind:image="post.image" />
 				</div>
 			</div>
 		</div>
@@ -83,14 +75,5 @@ const onClickTag = (tagName) => {
 
 const containsTag = (postTags) => {
 	return queryTags.value.length === 0 || queryTags.value.some(tag => postTags.includes(tag));
-}
-
-const dateJa = (date: string) => {
-	return date
-		.substring(0, date.indexOf('T'))
-		.replaceAll('-0', '-')
-		.replace('-', '年')
-		.replace('-', '月')
-		.concat('日');
 }
 </script>

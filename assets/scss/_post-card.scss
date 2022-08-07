@@ -1,0 +1,47 @@
+.post-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $color-surface;
+  outline: 1px solid $color-outline;
+  outline-offset: -1px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .post-image {
+    width: 100%;
+    aspect-ratio: $golden-ratio;
+    object-fit: cover;
+  }
+
+  .post-title {
+    @extend .title-large;
+    margin: 8px 16px;
+  }
+
+  .post-tags {
+    @extend .title-small;
+    color: $color-link;
+    margin: 0 16px;
+
+    .post-tag {
+      &:before {
+        content: "#";
+      }
+
+      &:after {
+        content: " ";
+      }
+    }
+  }
+
+  .post-date {
+    @extend .title-small;
+    color: $color-on-surface-variant;
+    margin: 0px 16px 16px 16px;
+  }
+}
