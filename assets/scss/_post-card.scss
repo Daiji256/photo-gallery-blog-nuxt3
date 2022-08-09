@@ -1,6 +1,6 @@
 .post-card {
-  width: calc(100% - 32px);
-  margin: 0 16px 12px 16px;
+  width: 100%;
+  margin-bottom: 8px;
   border-radius: 12px;
   overflow: hidden;
   background-color: $color-surface;
@@ -24,25 +24,23 @@
     margin: 8px 16px;
   }
 
-  .post-tags {
+  .post-tags-date {
     @extend .font-label-medium;
-    color: $color-link;
-    margin: 0 16px;
+    display: flex;
+    margin: 0 16px 16px 16px;
 
     .post-tag {
+      color: $color-link;
+      margin-right: 8px;
+
       &:before {
         content: "#";
       }
-
-      &:after {
-        content: " ";
-      }
     }
-  }
 
-  .post-date {
-    @extend .font-label-medium;
-    color: $color-on-surface-variant;
-    margin: 0px 16px 16px 16px;
+    .post-date {
+      color: $color-on-surface-variant;
+      margin-left: auto;
+    }
   }
 }

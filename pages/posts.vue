@@ -1,20 +1,22 @@
 <template>
 	<div>
-		<div class="tags-filter" v-on:click="onClickFilter()">
-			<div class="text">絞り込み</div>
-			<div class="logo">
-				<svg height="20" width="20" v-bind:class='{ "rotate-180": visibleTags }'>
-					<path fill="currentColor" d="m10 13.062-5-5L6.062 7 10 10.938 13.938 7 15 8.062Z" />
-				</svg>
+		<div class="tags-filter">
+			<div class="tags-filter-label" v-on:click="onClickFilter()">
+				<div class="text">絞り込み</div>
+				<div class="logo">
+					<svg height="20" width="20" v-bind:class='{ "rotate-180": visibleTags }'>
+						<path fill="currentColor" d="m10 13.062-5-5L6.062 7 10 10.938 13.938 7 15 8.062Z" />
+					</svg>
+				</div>
+			</div>
+			<div class="tags" v-bind:class='{ "hidden": !visibleTags }'>
+				<div class="tag" v-for="tag in tags" v-on:click="onClickTag(tag.name)"
+					v-bind:class='{ "unselected": !isSelected(tag.name), "selected": isSelected(tag.name) }'>
+					{{ tag.name }}
+				</div>
 			</div>
 		</div>
-		<div class="tags" v-bind:class='{ "hidden": !visibleTags }'>
-			<div class="tag" v-for="tag in tags" v-on:click="onClickTag(tag.name)"
-				v-bind:class='{ "unselected": !isSelected(tag.name), "selected": isSelected(tag.name) }'>
-				{{ tag.name }}
-			</div>
-		</div>
-		<div v-for="post in posts">
+		<div class="posts" v-for="post in posts">
 			<div class="post-card" v-if="containsTag(post.tags)">
 				<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
 					v-bind:image="post.image" />
