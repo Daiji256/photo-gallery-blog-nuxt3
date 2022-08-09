@@ -18,14 +18,14 @@
   }
 
   .text {
-    @extend .label-large;
+    @extend .font-label-medium;
     display: grid;
     align-items: center;
   }
 }
 
 .tags {
-  @extend .label-large;
+  @extend .font-label-medium;
 
   .tag {
     cursor: pointer;

@@ -2,197 +2,69 @@
 $font-family-sans-serif: 'Noto Sans JP', sans-serif;
 $font-family-monospace: 'Noto Sans Mono', 'Noto Sans JP', monospace;
 
-/* Display Large */
-$font-display-large-size: 5.7rem;
-$font-display-large-weight: 400;
-$font-display-large-height: 6.4rem;
-$font-display-large-tracking: 0;
+/* Master Size */
+$font-size-xxl: calc(1.6rem * 8 / 5);
+$font-size-xl: calc(1.6rem * 8 / 6);
+$font-size-l: calc(1.6rem * 8 / 7);
+$font-size-m: calc(1.6rem * 8 / 8);
+$font-size-s: calc(1.6rem * 8 / 9);
+$font-size-xs: calc(1.6rem * 8 / 10);
+$font-size-xxs: calc(1.6rem * 8 / 11);
 
-.display-large {
-  font-size: $font-display-large-size;
-  font-weight: $font-display-large-weight;
-  line-height: $font-display-large-height;
-  letter-spacing: $font-display-large-tracking;
+/* Master Line Height */
+$font-line-height-xxl: 3.2rem;
+$font-line-height-xl: 3.2rem;
+$font-line-height-l: 2.4rem;
+$font-line-height-m: 2.4rem;
+$font-line-height-s: 1.6rem;
+$font-line-height-xs: 1.6rem;
+$font-line-height-xxs: 1.6rem;
+
+/* Master Weight */
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+.font-body {
+  font-size: $font-size-m;
+  line-height: $font-line-height-m;
+  font-weight: $font-weight-regular;
 }
 
-/* Display Medium */
-$font-display-medium-size: 4.5rem;
-$font-display-medium-weight: 400;
-$font-display-medium-height: 5.2rem;
-$font-display-medium-tracking: 0;
-
-.display-medium {
-  font-size: $font-display-medium-size;
-  font-weight: $font-display-medium-weight;
-  line-height: $font-display-medium-height;
-  letter-spacing: $font-display-medium-tracking;
+/* Title */
+.font-title-large {
+  font-size: $font-size-xxl;
+  line-height: $font-line-height-xxl;
+  font-weight: $font-weight-regular;
 }
 
-/* Display Small */
-$font-display-small-size: 3.6rem;
-$font-display-small-weight: 400;
-$font-display-small-height: 4.4rem;
-$font-display-small-tracking: 0;
-
-.display-small {
-  font-size: $font-display-small-size;
-  font-weight: $font-display-small-weight;
-  line-height: $font-display-small-height;
-  letter-spacing: $font-display-small-tracking;
+.font-title-medium {
+  font-size: $font-size-xl;
+  line-height: $font-line-height-xl;
+  font-weight: $font-weight-regular;
 }
 
-/* Headline Large */
-$font-headline-large-size: 3.2rem;
-$font-headline-large-weight: 400;
-$font-headline-large-height: 4.0rem;
-$font-headline-large-tracking: 0;
-
-.headline-large {
-  font-size: $font-headline-large-size;
-  font-weight: $font-headline-large-weight;
-  line-height: $font-headline-large-height;
-  letter-spacing: $font-headline-large-tracking;
+.font-title-small {
+  font-size: $font-size-l;
+  line-height: $font-line-height-l;
+  font-weight: $font-weight-regular;
 }
 
-/* Headline Medium */
-$font-headline-medium-size: 2.8rem;
-$font-headline-medium-weight: 400;
-$font-headline-medium-height: 3.6rem;
-$font-headline-medium-tracking: 0;
-
-.headline-medium {
-  font-size: $font-headline-medium-size;
-  font-weight: $font-headline-medium-weight;
-  line-height: $font-headline-medium-height;
-  letter-spacing: $font-headline-medium-tracking;
+/* Label */
+.font-label-large {
+  font-size: $font-size-m;
+  line-height: $font-line-height-m;
+  font-weight: $font-weight-medium;
 }
 
-/* Headline Small */
-$font-headline-small-size: 2.4rem;
-$font-headline-small-weight: 400;
-$font-headline-small-height: 3.2rem;
-$font-headline-small-tracking: 0;
-
-.headline-small {
-  font-size: $font-headline-small-size;
-  font-weight: $font-headline-small-weight;
-  line-height: $font-headline-small-height;
-  letter-spacing: $font-headline-small-tracking;
+.font-label-medium {
+  font-size: $font-size-s;
+  line-height: $font-line-height-s;
+  font-weight: $font-weight-medium;
 }
 
-/* Title Large */
-$font-title-large-size: 2.2rem;
-$font-title-large-weight: 400;
-$font-title-large-height: 2.8rem;
-$font-title-large-tracking: 0;
-
-.title-large {
-  font-size: $font-title-large-size;
-  font-weight: $font-title-large-weight;
-  line-height: $font-title-large-height;
-  letter-spacing: $font-title-large-tracking;
-}
-
-/* Title Medium */
-$font-title-medium-size: 1.6rem;
-$font-title-medium-weight: 500;
-$font-title-medium-height: 2.4rem;
-$font-title-medium-tracking: 0.15rem;
-
-.title-medium {
-  font-size: $font-title-medium-size;
-  font-weight: $font-title-medium-weight;
-  line-height: $font-title-medium-height;
-  letter-spacing: $font-title-medium-tracking;
-}
-
-/* Title Small */
-$font-title-small-size: 1.4rem;
-$font-title-small-weight: 500;
-$font-title-small-height: 2.0rem;
-$font-title-small-tracking: 0.1rem;
-
-.title-small {
-  font-size: $font-title-small-size;
-  font-weight: $font-title-small-weight;
-  line-height: $font-title-small-height;
-  letter-spacing: $font-title-small-tracking;
-}
-
-/* Label Large */
-$font-label-large-size: 1.4rem;
-$font-label-large-weight: 500;
-$font-label-large-height: 2.0rem;
-$font-label-large-tracking: 0.1rem;
-
-.label-large {
-  font-size: $font-label-large-size;
-  font-weight: $font-label-large-weight;
-  line-height: $font-label-large-height;
-  letter-spacing: $font-label-large-tracking;
-}
-
-/* Label Medium */
-$font-label-medium-size: 1.2rem;
-$font-label-medium-weight: 500;
-$font-label-medium-height: 1.6rem;
-$font-label-medium-tracking: 0.5rem;
-
-.label-medium {
-  font-size: $font-label-medium-size;
-  font-weight: $font-label-medium-weight;
-  line-height: $font-label-medium-height;
-  letter-spacing: $font-label-medium-tracking;
-}
-
-/* Label Small */
-$font-label-small-size: 1.1rem;
-$font-label-small-weight: 500;
-$font-label-small-height: 1.6rem;
-$font-label-small-tracking: 0.5rem;
-
-.label-small {
-  font-size: $font-label-small-size;
-  font-weight: $font-label-small-weight;
-  line-height: $font-label-small-height;
-  letter-spacing: $font-label-small-tracking;
-}
-
-/* Body Large */
-$font-body-large-size: 1.6rem;
-$font-body-large-weight: 400;
-$font-body-large-height: 2.4rem;
-$font-body-large-tracking: 0.5rem;
-
-.body-large {
-  font-size: $font-body-large-size;
-  font-weight: $font-body-large-weight;
-  line-height: $font-body-large-height;
-  letter-spacing: $font-body-large-tracking;
-}
-
-/* Body Medium */
-$font-body-medium-size: 1.4rem;
-$font-body-medium-weight: 400;
-$font-body-medium-height: 2.0rem;
-$font-body-medium-tracking: 0.25rem;
-
-.body-medium {
-  font-size: $font-body-medium-size;
-  font-weight: $font-body-medium-weight;
-  line-height: $font-body-medium-height;
-  letter-spacing: $font-body-medium-tracking;
-}
-
-/* Body Small */
-$font-body-small-size: 1.2rem;
-$font-body-small-weight: 400;
-$font-body-small-height: 1.6rem;
-$font-body-small-tracking: 0.4rem;
-
-.body-small {
-  font-size: $font-body-small-size;
-  font-weight: $font-body-small-weight;
-  line-height: $font-body-small-height;
-  letter-spacing: $font-body-small-tracking;
+.font-label-small {
+  font-size: $font-size-xs;
+  line-height: $font-line-height-xs;
+  font-weight: $font-weight-medium;
 }

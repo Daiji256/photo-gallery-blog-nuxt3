@@ -1,5 +1,5 @@
 .post {
-  @extend .body-medium;
+  @extend .font-body;
   padding: 0 16px;
 
   .top-image {
@@ -17,7 +17,7 @@
     margin-right: -8px;
 
     .top-tag {
-      @extend .title-small;
+      @extend .font-label-medium;
       cursor: pointer;
       text-decoration: none;
       color: $color-link;
@@ -31,23 +31,23 @@
   }
 
   .top-date {
-    @extend .title-small;
+    @extend .font-label-medium;
     margin-bottom: 16px;
   }
 
   h1 {
-    @extend .headline-large;
+    @extend .font-title-large;
   }
 
   h2 {
-    @extend .headline-medium;
+    @extend .font-title-medium;
   }
 
   h3,
   h4,
   h5,
   h6 {
-    @extend .headline-small;
+    @extend .font-title-small;
   }
 
   h2,

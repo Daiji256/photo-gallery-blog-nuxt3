@@ -66,7 +66,7 @@
       .text {
         display: grid;
         align-items: center;
-        @extend .label-large;
+        @extend .font-label-medium;
       }
 
       .open-in-new {

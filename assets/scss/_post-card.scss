@@ -20,12 +20,12 @@
   }
 
   .post-title {
-    @extend .title-large;
+    @extend .font-title-medium;
     margin: 8px 16px;
   }
 
   .post-tags {
-    @extend .title-small;
+    @extend .font-label-medium;
     color: $color-link;
     margin: 0 16px;
 
@@ -41,7 +41,7 @@
   }
 
   .post-date {
-    @extend .title-small;
+    @extend .font-label-medium;
     color: $color-on-surface-variant;
     margin: 0px 16px 16px 16px;
   }
