@@ -25,6 +25,10 @@
 	</div>
 </template>
 
+<style lang="scss" scoped>
+@import '../assets/scss/variable';
+</style>
+
 <script setup lang="ts">
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
@@ -40,14 +44,13 @@ const tagsCount: number[] = [posts].flat().map(v => v.tags).flat().reduce(
 );
 const tags = Object.entries(tagsCount)
 	.map(([name, count]) => ({ name, count }))
-	.sort((a, b) => { return b.count - a.count; });
+	.sort((a, b) => { return b.count - a.count });
 
 const getQueryTags = () => {
 	return [useRoute().query.tag].flat().filter(tag => tag != null);
 }
 
 const visibleTags = ref(false);
-
 const onClickFilter = () => {
 	visibleTags.value = !visibleTags.value;
 }
