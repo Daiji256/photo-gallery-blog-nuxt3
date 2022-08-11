@@ -19,28 +19,12 @@
     object-fit: cover;
   }
 
-  .post-title {
-    @extend .font-title-medium;
-    margin: 8px 16px;
-  }
+  .post-info {
+    margin: 8px 16px 16px 16px;
 
-  .post-tags-date {
-    @extend .font-label-medium;
-    display: flex;
-    margin: 0 16px 16px 16px;
-
-    .post-tag {
-      color: $color-link;
-      margin-right: 8px;
-
-      &:before {
-        content: "#";
-      }
-    }
-
-    .post-date {
-      color: $color-on-surface-variant;
-      margin-left: auto;
+    .post-title {
+      @extend .font-title-medium;
+      margin-bottom: 8px;
     }
   }
 }
