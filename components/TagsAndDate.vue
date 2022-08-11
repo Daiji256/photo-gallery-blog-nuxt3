@@ -18,7 +18,7 @@
 		color: $color-link;
 		margin-right: 8px;
 		text-decoration: none;
-		-webkit-tap-highlight-color: transparent;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 		&:before {
 			content: "#";
