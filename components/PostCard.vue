@@ -15,12 +15,11 @@
 
 .post-card {
 	width: 100%;
-	margin-bottom: 8px;
-	border-radius: 12px;
 	overflow: hidden;
+	margin-bottom: 8px;
+	border: 1px solid $color-outline;
+	border-radius: 12px;
 	background-color: $color-surface;
-	outline: 1px solid $color-outline;
-	outline-offset: -1px;
 
 	a {
 		text-decoration: none;
