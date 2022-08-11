@@ -26,7 +26,7 @@
 	}
 
 	.top-title {
-		margin-top: -56px;
+		margin: -56px 0 8px 0;
 	}
 
 	.doc-body {
