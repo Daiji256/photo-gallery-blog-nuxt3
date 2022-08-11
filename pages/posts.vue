@@ -32,14 +32,13 @@ const posts = await queryContent('posts')
 	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.find();
 
-const tags = Object.entries(
-	[posts].flat().map(v => v.tags).flat().reduce(
-		(prev, current) => {
-			prev[current] = (prev[current] || 0) + 1;
-			return prev;
-		}, {}
-	)
-)
+const tagsCount: number[] = [posts].flat().map(v => v.tags).flat().reduce(
+	(prev, current) => {
+		prev[current] = (prev[current] || 0) + 1;
+		return prev;
+	}, {}
+);
+const tags = Object.entries(tagsCount)
 	.map(([name, count]) => ({ name, count }))
 	.sort((a, b) => { return b.count - a.count; });
 
@@ -55,7 +54,7 @@ const onClickFilter = () => {
 
 const queryTags = ref(getQueryTags());
 
-watch(() => useRoute().query, (query) => {
+watch(() => useRoute().query, () => {
 	queryTags.value = getQueryTags();
 });
 
