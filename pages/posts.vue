@@ -11,7 +11,7 @@
 		<div class="tags" v-bind:class='{ "hidden": !visibleTags }'>
 			<div class="tag" v-for="tag in tags" v-on:click="onClickTag(tag.name)"
 				v-bind:class='{ "unselected": !isSelected(tag.name), "selected": isSelected(tag.name) }'>
-				{{ tag.name }}
+				<div class="tag-text">{{ tag.name }}</div>
 			</div>
 		</div>
 		<div v-for="post in posts">
@@ -54,7 +54,6 @@
 	}
 
 	.tags {
-		@extend .font-label-medium;
 		margin: 0 -8px 8px 0;
 
 		.tag {
@@ -63,8 +62,17 @@
 			text-decoration: none;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			margin: 0 8px 8px 0;
-			padding: 8px 16px;
 			border-radius: 8px;
+
+			.tag-text {
+				@extend .font-label-medium;
+				display: flex;
+				min-height: 36px;
+				min-width: 64px;
+				padding: 8px 16px;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 
 		.unselected {
