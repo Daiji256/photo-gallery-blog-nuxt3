@@ -9,9 +9,10 @@
 			</div>
 		</div>
 		<div class="tags" v-bind:class='{ "hidden": !visibleTags }'>
-			<div class="tag" v-for="tag in tags" v-on:click="onClickTag(tag.name)"
-				v-bind:class='{ "unselected": !isSelected(tag.name), "selected": isSelected(tag.name) }'>
-				<div class="tag-text">{{ tag.name }}</div>
+			<div class="tag-touch-target" v-for="tag in tags" v-on:click="onClickTag(tag.name)">
+				<div class="tag" v-bind:class='{ "unselected": !isSelected(tag.name), "selected": isSelected(tag.name) }'>
+					{{ tag.name }}
+				</div>
 			</div>
 		</div>
 		<div v-for="post in posts">
@@ -31,7 +32,6 @@
 		cursor: pointer;
 		display: inline-flex;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		margin-bottom: 8px;
 
 		.text {
 			@extend .font-label-large;
@@ -54,24 +54,24 @@
 	}
 
 	.tags {
-		margin: 0 -8px 8px 0;
+		margin-right: -8px;
 
-		.tag {
-			cursor: pointer;
+		.tag-touch-target {
 			display: inline-block;
-			text-decoration: none;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-			margin: 0 8px 8px 0;
-			border-radius: 8px;
+			padding: 8px 0;
+			margin-right: 8px;
 
-			.tag-text {
+			.tag {
 				@extend .font-label-medium;
+				cursor: pointer;
 				display: flex;
-				min-height: 36px;
+				border-radius: 8px;
+				min-height: 32px;
 				min-width: 64px;
-				padding: 8px 16px;
+				padding: 0 16px;
 				justify-content: center;
 				align-items: center;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			}
 		}
 
