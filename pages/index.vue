@@ -12,10 +12,8 @@
 		<!-- TODO: -->
 		ピックアップ
 		<div v-for="post in pickupPosts">
-			<div class="post-card">
-				<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
-					v-bind:image="post.image" />
-			</div>
+			<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
+				v-bind:image="post.image" />
 		</div>
 	</div>
 </template>

@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div class="posts" v-for="post in posts">
-			<div class="post-card" v-if="containsTag(post.tags)">
+			<div v-if="containsTag(post.tags)">
 				<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
 					v-bind:image="post.image" />
 			</div>
