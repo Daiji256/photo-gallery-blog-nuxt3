@@ -23,6 +23,12 @@
 		&:before {
 			content: "#";
 		}
+
+		@media (hover: hover) {
+			&:hover {
+				text-decoration: underline 2px;
+			}
+		}
 	}
 
 	.post-date {
