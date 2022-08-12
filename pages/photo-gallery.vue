@@ -1,10 +1,8 @@
 <template>
 	<div class="photo-gallery">
-		<div class="photo-card" v-for="post in posts">
-			<NuxtLink v-bind:to="post._path">
-				<img v-bind:src="`${post.image}`">
-			</NuxtLink>
-		</div>
+		<NuxtLink class="photo-card" v-for="post in posts" v-bind:to="post._path">
+			<img v-bind:src="`${post.image}`">
+		</NuxtLink>
 	</div>
 </template>
 
