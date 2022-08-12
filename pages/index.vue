@@ -18,6 +18,69 @@
 	</div>
 </template>
 
+<style lang="scss" scoped>
+@import '../assets/scss/variable';
+
+.photo-slider {
+	position: relative;
+	width: calc(100% - 32px);
+	aspect-ratio: $golden-ratio;
+	margin: 0 auto;
+
+	img {
+		position: absolute;
+		width: 100%;
+		aspect-ratio: $golden-ratio;
+		object-fit: cover;
+	}
+
+	.fadeout {
+		visibility: hidden;
+		opacity: 0;
+		transition: 2s ease-in-out;
+	}
+
+	.fadein {
+		visibility: visible;
+		opacity: 1;
+		transition: 2s ease-in-out;
+	}
+
+	.quick {
+		transition: 0.2s ease-in-out;
+	}
+
+	.indicator {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		text-align: center;
+
+		.item {
+			display: inline-block;
+			vertical-align: bottom;
+
+			.circle {
+				background-color: $color-primary-container;
+				width: 8px;
+				height: 8px;
+				border-radius: 4px;
+				margin: 6px;
+				transition: 2s ease-in-out;
+			}
+
+			.quick {
+				transition: 0.2s ease-in-out;
+			}
+
+			.active {
+				background-color: $color-primary;
+			}
+		}
+	}
+}
+</style>
+
 <script setup lang="ts">
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
