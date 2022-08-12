@@ -109,7 +109,7 @@
 
 	.hidden {
 		visibility: hidden;
-		height: 0;
+		height: 8px;
 	}
 }
 </style>
