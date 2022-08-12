@@ -8,6 +8,30 @@
 	</div>
 </template>
 
+<style lang="scss" scoped>
+@import '../assets/scss/variable';
+
+.photo-gallery {
+	display: flex;
+	flex-wrap: wrap;
+
+	.photo-card {
+		width: 50%;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		@media screen and (min-width: $screen-small-min) {
+			width: calc(100% / 3);
+		}
+
+		img {
+			width: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+		}
+	}
+}
+</style>
+
 <script setup lang="ts">
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
