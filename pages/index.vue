@@ -11,7 +11,7 @@
 		</div>
 		<!-- TODO: -->
 		ピックアップ
-		<div v-for="post in pickupPosts">
+		<div class="pickup-posts" v-for="post in pickupPosts">
 			<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
 				v-bind:image="post.image" />
 		</div>
@@ -31,6 +31,7 @@
 		position: absolute;
 		width: 100%;
 		aspect-ratio: $golden-ratio;
+		border-radius: 12px;
 		object-fit: cover;
 	}
 
@@ -78,6 +79,10 @@
 			}
 		}
 	}
+}
+
+.pickup-posts {
+	margin: 0 16px;
 }
 </style>
 
