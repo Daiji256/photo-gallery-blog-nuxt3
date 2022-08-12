@@ -1,8 +1,8 @@
 <template>
 	<div class="post-tags-date">
-		<NuxtLink class="post-tag" v-for="tag in tags" v-bind:to="`/posts?tag=${tag}`">
+		<span class="post-tag" v-for="tag in tags" v-on:click.prevent="onClickTag(tag)">
 			{{ tag }}
-		</NuxtLink>
+		</span>
 		<span class="post-date">{{ dateToStr(date) }}</span>
 	</div>
 </template>
@@ -19,12 +19,19 @@
 		margin-right: 8px;
 		text-decoration: none;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		cursor: pointer;
 
 		&:before {
 			content: "#";
 		}
 
 		@media (hover: hover) {
+			&:hover {
+				text-decoration: underline 2px;
+			}
+		}
+
+		&:active {
 			&:hover {
 				text-decoration: underline 2px;
 			}
@@ -46,5 +53,9 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const dateToStr = (dateStr: string) => {
 	const date = new Date(dateStr);
 	return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+const onClickTag = (tag) => {
+	useRouter().push({ path: '/posts', query: { tag: tag } });
 }
 </script>
