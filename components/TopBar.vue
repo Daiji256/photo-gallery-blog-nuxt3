@@ -94,6 +94,7 @@
 		</div>
 	</div>
 </template>
+
 <script setup lang="ts">
 const getIsActive = (current: String) => {
 	// TODO: スラッシュをとりあえず消して処理している
