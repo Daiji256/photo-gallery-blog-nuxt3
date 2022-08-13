@@ -3,7 +3,10 @@
 		<ContentDoc v-slot="{ doc }">
 			<img class="top-image" v-bind:src="doc.image">
 			<h1 class="top-title" v-bind:id="doc.title">{{ doc.title }}</h1>
-			<TagsAndDate v-bind:date="doc.date" v-bind:tags="doc.tags" />
+			<div class="post-tags-date">
+				<NuxtLink class="post-tag" v-for="tag in doc.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
+				<Date v-bind:date="doc.date" class="post-date" />
+			</div>
 			<div class="doc-body">
 				<ContentRenderer v-bind:value="doc" />
 			</div>
@@ -26,7 +29,37 @@
 	}
 
 	.top-title {
-		margin: -56px 0 8px 0;
+		margin-top: -56px;
+	}
+
+	.post-tags-date {
+		@extend .font-label-medium;
+		line-height: 3.2rem;
+		margin-right: -8px;
+
+		.post-tag {
+			display: inline-block;
+			margin-right: 8px;
+			color: $color-link;
+			text-decoration: none;
+
+			@media (hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&:active {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.post-date {
+			float: right;
+			margin-right: 8px;
+		}
 	}
 
 	.doc-body {
@@ -56,9 +89,6 @@ h6 {
 h2,
 h3,
 h4 {
-	// TODO: cursor の対応
-	//cursor: text;
-
 	a {
 		color: inherit;
 		text-decoration: none;
