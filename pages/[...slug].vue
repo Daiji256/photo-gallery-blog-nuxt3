@@ -105,4 +105,9 @@ h6 {
 	margin: -64px 0 0 0;
 	padding: 64px 0 0 0;
 }
+
+p a {
+	padding: 4px 0;
+	line-height: 3.2rem;
+}
 </style>
