@@ -6,7 +6,10 @@
 			</div>
 			<div class="post-info">
 				<div class="post-title">{{ title }}</div>
-				<TagsAndDate v-bind:date="date" v-bind:tags="tags" />
+				<div class="post-tags-date">
+					<div class="post-tag" v-for="tag in tags">{{ tag }}</div>
+					<Date v-bind:date="date" class="post-date" />
+				</div>
 			</div>
 		</NuxtLink>
 	</div>
@@ -18,7 +21,6 @@
 .post-card {
 	width: 100%;
 	overflow: hidden;
-	margin-bottom: 8px;
 	border: 1px solid $color-outline;
 	border-radius: 12px;
 	background-color: $color-surface;
@@ -68,7 +70,22 @@
 
 		.post-title {
 			@extend .font-title-medium;
-			margin-bottom: 8px;
+		}
+
+		.post-tags-date {
+			@extend .font-label-small;
+			color: $color-on-surface-variant;
+			margin: 4px -8px 0 0;
+
+			.post-tag {
+				display: inline-block;
+				margin-right: 8px;
+			}
+
+			.post-date {
+				float: right;
+				margin-right: 8px;
+			}
 		}
 	}
 }

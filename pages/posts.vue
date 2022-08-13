@@ -17,7 +17,7 @@
 		</div>
 		<div v-for="post in posts">
 			<PostCard v-if="containsTag(post.tags)" v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date"
-				v-bind:tags="post.tags" v-bind:image="post.image" />
+				v-bind:tags="post.tags" v-bind:image="post.image" class="post-card" />
 		</div>
 	</div>
 </template>
@@ -112,6 +112,10 @@
 	.hidden {
 		visibility: hidden;
 		height: 8px;
+	}
+
+	.post-card {
+		margin-bottom: 8px;
 	}
 }
 </style>
