@@ -10,32 +10,41 @@ header {
   transition-timing-function: ease-in-out;
   transition: background-color 0.4s;
 
-  .menu {
+  .menu-click {
     position: relative;
-    width: 48px;
-    height: 48px;
     margin-left: 4px;
     margin-right: 12px;
-    border-radius: 32px;
+    cursor: pointer;
+
+    .menu {
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .transparent {
+        color: transparent;
+      }
+    }
 
     @media (hover: hover) {
       &:hover {
-        background-color: rgba($color-on-surface, $state-hover);
+        .menu {
+          background-color: rgba($color-on-surface, $state-hover);
+        }
       }
     }
 
     &:active {
-      background-color: rgba($color-on-surface, $state-pressed);
-    }
-
-    svg {
-      position: absolute;
-      top: 25%;
-      left: 25%;
-    }
-
-    .transparent {
-      color: transparent;
+      .menu {
+        background-color: rgba($color-on-surface, $state-pressed);
+      }
     }
   }
 

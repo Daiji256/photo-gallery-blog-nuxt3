@@ -1,13 +1,15 @@
 <template>
 	<header v-bind:class='{ "on-scroll": isScroll }'>
-		<div class="menu" v-on:click="onMenuClick">
-			<svg height="24" width="24" v-bind:class='{ "transparent": isOpen }'>
-				<path fill="currentColor" d="M3 18V16H21V18ZM3 13V11H21V13ZM3 8V6H21V8Z" />
-			</svg>
-			<svg height="24" width="24" v-bind:class='{ "transparent": !isOpen }'>
-				<path fill="currentColor"
-					d="M3 18V16H16V18ZM3 13V11H13V13ZM3 8V6H16V8ZM19.6 17 14.6 12 19.6 7 21 8.4 17.4 12 21 15.6Z" />
-			</svg>
+		<div class="menu-click" v-on:click="onMenuClick">
+			<div class="menu">
+				<svg height="24" width="24" v-bind:class='{ "transparent": isOpen }'>
+					<path fill="currentColor" d="M3 18V16H21V18ZM3 13V11H21V13ZM3 8V6H21V8Z" />
+				</svg>
+				<svg height="24" width="24" v-bind:class='{ "transparent": !isOpen }'>
+					<path fill="currentColor"
+						d="M3 18V16H16V18ZM3 13V11H13V13ZM3 8V6H16V8ZM19.6 17 14.6 12 19.6 7 21 8.4 17.4 12 21 15.6Z" />
+				</svg>
+			</div>
 		</div>
 		<div class="header-box">
 			<NuxtLink class="title" to="/" v-on:click="closeMenu">
