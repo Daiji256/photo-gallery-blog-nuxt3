@@ -66,7 +66,7 @@
 	}
 
 	.post-info {
-		margin: 8px 16px 16px 16px;
+		margin: 8px 16px 12px 16px;
 
 		.post-title {
 			@extend .font-title-medium;
