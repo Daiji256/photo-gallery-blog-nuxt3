@@ -91,6 +91,10 @@
 </style>
 
 <script setup lang="ts">
+useHead({
+	title: useRuntimeConfig().siteName
+});
+
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
 	.sort({ 'date': -1 })

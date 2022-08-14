@@ -31,6 +31,10 @@
 </style>
 
 <script setup lang="ts">
+useHead({
+	title: "ギャラリー" + ' - ' + useRuntimeConfig().siteName
+});
+
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
 	.sort({ 'date': -1 })
