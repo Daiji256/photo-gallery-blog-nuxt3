@@ -157,7 +157,8 @@ const onTouchMove = (event) => {
 const onTouchEnd = () => {
 	if (!isOpen.value) return;
 	isAnimated = false;
-	if (toucheX - touchePrevX < -10 || (toucheX - touchePrevX < 10 && swipeLength > drawerRightX / 2)) { // 10 は適当な値
+	// 10 は適当な値
+	if (toucheX - touchePrevX < -10 || (toucheX - touchePrevX < 10 && swipeLength > drawerRightX / 2)) {
 		closeMenu();
 	}
 	isSwipe.value = false;
