@@ -28,16 +28,14 @@
 	.post-card-main {
 		width: 100%;
 		overflow: hidden;
-		border: 1px solid $color-outline;
+		box-shadow: 0 0 0 1px $color-outline;
 		border-radius: 12px;
 		background-color: $color-surface;
 
-		.post-image-background {
-			.post-image {
-				width: 100%;
-				aspect-ratio: $golden-ratio;
-				object-fit: cover;
-			}
+		.post-image-background .post-image {
+			width: 100%;
+			aspect-ratio: $golden-ratio;
+			object-fit: cover;
 		}
 
 		.post-info {

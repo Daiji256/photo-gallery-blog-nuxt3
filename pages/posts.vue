@@ -77,7 +77,7 @@
 
 		.unselected {
 			color: $color-on-surface-variant;
-			border: 1px solid $color-outline;
+			box-shadow: 0 0 0 1px $color-outline;
 
 			@media (hover: hover) {
 				&:hover {
@@ -93,18 +93,18 @@
 		.selected {
 			color: $color-on-secondary-container;
 			background-color: $color-secondary-container;
-			border: 1px solid $color-secondary-container;
+			box-shadow: 0 0 0 1px $color-secondary-container;
 
 			@media (hover: hover) {
 				&:hover {
 					background-color: state($color-secondary-container, $color-on-surface-variant, $state-hover);
-					border-color: state($color-secondary-container, $color-on-surface-variant, $state-hover);
+					box-shadow: 0 0 0 1px state($color-secondary-container, $color-on-surface-variant, $state-hover);
 				}
 			}
 
 			&:active {
 				background-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
-				border-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
+				box-shadow: 0 0 0 1px state($color-secondary-container, $color-on-surface-variant, $state-pressed);
 			}
 		}
 	}
