@@ -50,9 +50,7 @@
 			}
 
 			&:active {
-				&:hover {
-					text-decoration: underline;
-				}
+				text-decoration: underline;
 			}
 		}
 
