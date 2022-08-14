@@ -1,16 +1,14 @@
 <template>
 	<div class="post">
-		<ContentDoc v-slot="{ doc }">
-			<img class="top-image" v-bind:src="doc.image">
-			<h1 class="top-title" v-bind:id="doc.title">{{ doc.title }}</h1>
-			<div class="post-tags-date">
-				<NuxtLink class="post-tag" v-for="tag in doc.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
-				<Date v-bind:date="doc.date" class="post-date" />
-			</div>
-			<div class="doc-body">
-				<ContentRenderer v-bind:value="doc" />
-			</div>
-		</ContentDoc>
+		<img class="top-image" v-bind:src="data.image">
+		<h1 class="top-title" v-bind:id="data.title">{{ data.title }}</h1>
+		<div class="post-tags-date">
+			<NuxtLink class="post-tag" v-for="tag in data.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
+			<Date v-bind:date="data.date" class="post-date" />
+		</div>
+		<div class="doc-body">
+			<ContentRenderer v-bind:value="data" />
+		</div>
 	</div>
 </template>
 
@@ -109,3 +107,13 @@ p a {
 	line-height: 3.2rem;
 }
 </style>
+
+<script setup lang="ts">
+const path = useRoute().path;
+const content = await useAsyncData(path, () => queryContent(path).findOne());
+const data = content.data;
+
+useHead({
+	title: data.value.title + ' - ' + useRuntimeConfig().siteName
+});
+</script>
