@@ -99,6 +99,230 @@
 	</div>
 </template>
 
+<style lang="scss" scoped>
+@import '../assets/scss/variable';
+
+header {
+	z-index: 1;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	width: 100%;
+	height: 64px;
+	user-select: none;
+	background-color: $color-surface;
+	transition-timing-function: ease-in-out;
+	transition: background-color 0.4s;
+
+	.menu-click {
+		position: relative;
+		margin-left: 4px;
+		margin-right: 12px;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		cursor: pointer;
+
+		.menu {
+			width: 48px;
+			height: 48px;
+			border-radius: 24px;
+
+			svg {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.transparent {
+				color: transparent;
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover .menu {
+				background-color: rgba($color-on-surface, $state-hover);
+			}
+		}
+
+		&:active .menu {
+			background-color: rgba($color-on-surface, $state-pressed);
+		}
+	}
+
+	.header-box {
+		margin-right: 64px;
+		width: calc(100% - 128px);
+		text-align: center;
+
+		.title-click {
+			display: inline-flex;
+			color: inherit;
+			text-decoration: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+			.title {
+				display: inline-flex;
+				height: 48px;
+				padding: 0 12px;
+				border-radius: 24px;
+				align-items: center;
+
+				.title-logo {
+					display: grid;
+				}
+
+				.title-text {
+					@extend .font-label-large;
+					display: none;
+					margin: 0 8px 0 4px;
+				}
+
+				@media screen and (min-width: $screen-x-small-min) {
+					.title-text {
+						display: grid;
+					}
+				}
+			}
+
+			@media (hover: hover) {
+				&:hover .title {
+					background-color: rgba($color-on-surface, $state-hover);
+				}
+			}
+
+			&:active .title {
+				background-color: rgba($color-on-surface, $state-pressed);
+			}
+		}
+	}
+}
+
+.on-scroll {
+	background-color: elevation($color-surface, $elevation-level-2);
+}
+
+.drawer {
+	z-index: 1;
+	position: fixed;
+	margin-top: 64px;
+	visibility: hidden;
+	transition: visibility 0.2s;
+
+	.drawer-scrim {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba($color-neutral-variant-20, 0.4);
+		opacity: 0;
+		transition-timing-function: ease-in;
+		transition: opacity 0.2s;
+	}
+
+	.drawer-content {
+		display: flex;
+		flex-flow: column;
+		overflow: auto;
+		width: min(360px, 75vw);
+		height: calc(var(--vh, 0.5vh) * 100 - 64px);
+		padding-left: 12px;
+		padding-right: 12px;
+		background-color: $color-surface;
+		border-top-right-radius: 16px;
+		border-bottom-right-radius: 16px;
+		transform: translateX(-100%);
+		transition-timing-function: ease-in;
+		transition: transform 0.2s;
+
+		.line {
+			width: calc(100% - 32px);
+			margin: 0 16px;
+			border: none;
+			border-bottom: 1px solid $color-neutral-variant-50;
+		}
+
+		.drawer-menu {
+			text-decoration: none;
+			color: inherit;
+			display: inline-flex;
+			border-radius: 28px;
+			padding-left: 16px;
+			padding-right: 16px;
+			min-height: 56px;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: state($color-surface, $color-on-surface, $state-hover);
+				}
+			}
+
+			&:active {
+				background-color: state($color-surface, $color-on-surface, $state-pressed);
+			}
+
+			.logo {
+				display: grid;
+				align-items: center;
+				margin-right: 12px;
+			}
+
+			.text {
+				display: grid;
+				align-items: center;
+				@extend .font-label-medium;
+			}
+
+			.open-in-new {
+				display: grid;
+				align-items: center;
+				margin-left: 4px;
+				color: $color-on-surface-variant;
+			}
+		}
+
+		.active {
+			background-color: $color-secondary-container;
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: state($color-secondary-container, $color-on-surface-variant, $state-hover);
+				}
+			}
+
+			&:active {
+				background-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
+			}
+		}
+	}
+}
+
+.drawer-open {
+	visibility: visible;
+
+	.drawer-scrim {
+		opacity: 1;
+	}
+
+	.drawer-content {
+		transform: translateX(0%);
+	}
+}
+
+.drawer-swipe {
+	transition: visibility 0s;
+
+	.drawer-scrim {
+		opacity: var(--drawer-opacity, 1);
+		transition: opacity 0s;
+	}
+
+	.drawer-content {
+		transform: translateX(var(--drawer-translate-x, 0%));
+		transition: transform 0s;
+	}
+}
+</style>
+
 <script setup lang="ts">
 const getIsActive = (current: String) => {
 	// TODO: スラッシュをとりあえず消して処理している
