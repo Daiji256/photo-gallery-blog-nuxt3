@@ -54,7 +54,7 @@
 	}
 
 	.tags {
-		margin-right: -8px;
+		margin: 0 -8px 8px 0;
 
 		.tag-touch-target {
 			display: inline-block;
@@ -111,7 +111,7 @@
 
 	.hidden {
 		visibility: hidden;
-		height: 8px;
+		height: 0;
 	}
 
 	.post-card {
