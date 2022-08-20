@@ -76,8 +76,8 @@
 		}
 
 		.unselected {
+			@extend .my-box-shadow;
 			color: $color-on-surface-variant;
-			box-shadow: 0 0 0 1px $color-outline;
 
 			@media (hover: hover) {
 				&:hover {
@@ -93,18 +93,15 @@
 		.selected {
 			color: $color-on-secondary-container;
 			background-color: $color-secondary-container;
-			box-shadow: 0 0 0 1px $color-secondary-container;
 
 			@media (hover: hover) {
 				&:hover {
 					background-color: state($color-secondary-container, $color-on-surface-variant, $state-hover);
-					box-shadow: 0 0 0 1px state($color-secondary-container, $color-on-surface-variant, $state-hover);
 				}
 			}
 
 			&:active {
 				background-color: state($color-secondary-container, $color-on-surface-variant, $state-pressed);
-				box-shadow: 0 0 0 1px state($color-secondary-container, $color-on-surface-variant, $state-pressed);
 			}
 		}
 	}

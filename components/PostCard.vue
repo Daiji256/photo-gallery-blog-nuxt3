@@ -26,9 +26,9 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	.post-card-main {
+		@extend .my-box-shadow;
 		width: 100%;
 		overflow: hidden;
-		box-shadow: 0 0 0 1px $color-outline;
 		border-radius: 12px;
 		background-color: $color-surface;
 
