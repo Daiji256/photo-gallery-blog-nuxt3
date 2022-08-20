@@ -1,5 +1,7 @@
 #!/bin/sh
+# `imagemagick` is required
+
 images=`find public/images -type f -name \*.jpg -or -name \*.png`;
 for image in $images;
-  do cwebp -q 80 $image -o "${image%.*}.webp";
+  do convert $image -resize 1024x1024 -quality 75 "${image%.*}.webp";
 done
