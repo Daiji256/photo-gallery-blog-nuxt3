@@ -32,9 +32,14 @@
 
 	.post-tags-date {
 		@extend .font-label-medium;
-		min-height: 32px;
 		line-height: 3.2rem;
 		margin-right: -8px;
+
+		&::after {
+			content: "";
+			clear: both;
+			display: block;
+		}
 
 		.post-tag {
 			display: inline-block;

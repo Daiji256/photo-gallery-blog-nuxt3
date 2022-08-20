@@ -50,6 +50,12 @@
 				color: $color-on-surface-variant;
 				margin: 4px -8px 0 0;
 
+				&::after {
+					content: "";
+					clear: both;
+					display: block;
+				}
+
 				.post-tag {
 					display: inline-block;
 					margin-right: 8px;
