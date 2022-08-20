@@ -1,15 +1,9 @@
 <template>
 	<div>
-		<div class="photo-slider">
-			<div v-for="(image, index) in images">
-				<img v-bind:src="image" class="slider-image"
-					v-bind:class='{ "fadein": isFadein(index), "fadeout": !isFadein(index) }'>
-			</div>
-		</div>
+		<img src="/images/sample-00.webp" class="top-image">
 		<div class="icon">
 			<img class="icon-image" src="/icons/icon.svg">
 		</div>
-		<!-- TODO: -->
 		<div class="site-name">{{ siteName }}</div>
 		<div class="site-description">
 			このブログは
@@ -27,30 +21,10 @@
 <style lang="scss" scoped>
 @import '../assets/scss/variable';
 
-.photo-slider {
-	position: relative;
+.top-image {
 	width: 100%;
 	aspect-ratio: $golden-ratio;
-	margin: 0 auto;
-
-	.slider-image {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.fadeout {
-		visibility: hidden;
-		opacity: 0;
-		transition: 2s ease-in-out;
-	}
-
-	.fadein {
-		visibility: visible;
-		opacity: 1;
-		transition: 2s ease-in-out;
-	}
+	object-fit: cover;
 }
 
 .icon {
@@ -112,27 +86,7 @@ const posts = await queryContent('posts')
 	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.find();
 
-const images = posts.map(post => post.image)
-
 const pickupPosts = posts.filter(post => {
 	return useRuntimeConfig().pickupPosts.some(path => path === post._path);
-});
-
-const pageNum = ref(0);
-
-const isFadein = (index) => {
-	return index === pageNum.value;
-}
-
-let intervalId = null;
-
-onMounted(() => {
-	intervalId = setInterval(() => {
-		pageNum.value = (pageNum.value + 1) % images.length;
-	}, 10000);
-});
-
-onBeforeUnmount(() => {
-	clearInterval(intervalId);
 });
 </script>
