@@ -70,6 +70,11 @@ useHead({
 	],
 	link: [
 		{
+			rel: 'shortcut icon',
+			type: 'image/x-icon',
+			href: '/favicon/favicon.ico'
+		},
+		{
 			rel: 'preconnect',
 			href: 'https://fonts.googleapis.com',
 		},
