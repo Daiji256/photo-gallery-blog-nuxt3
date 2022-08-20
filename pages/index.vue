@@ -1,16 +1,22 @@
 <template>
 	<div>
 		<div class="photo-slider">
-			<img v-bind:src="img1" v-bind:class='{ "fadein": isFadein, "fadeout": !isFadein, "quick": isQuick }'>
-			<img v-bind:src="img2" v-bind:class='{ "fadein": !isFadein, "fadeout": isFadein, "quick": isQuick }'>
-			<div class="indicator">
-				<div class="item" v-for="(_, index) in pickupPosts" v-on:click="setPage(index)">
-					<div class="circle" v-bind:class='{ "active": pageNum == index, "quick": isQuick }'></div>
-				</div>
+			<div v-for="(image, index) in images">
+				<img v-bind:src="image" class="slider-image"
+					v-bind:class='{ "fadein": isFadein(index), "fadeout": !isFadein(index) }'>
 			</div>
 		</div>
+		<div class="icon">
+			<img class="icon-image" src="/icons/icon.svg">
+		</div>
 		<!-- TODO: -->
-		ピックアップ
+		<div class="site-name">{{ siteName }}</div>
+		<div class="site-description">
+			このブログは
+			XXX XXX XXX XXX XXX XXX XXX XXX XXX
+			XXX XXX XXX XXX XXX XXX XXX XXX XXX
+		</div>
+		<div class="pickup-text">ピックアップ記事</div>
 		<div class="pickup-posts" v-for="post in pickupPosts">
 			<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
 				v-bind:image="post.image" class="post-card" />
@@ -23,15 +29,14 @@
 
 .photo-slider {
 	position: relative;
-	width: calc(100% - 32px);
+	width: 100%;
 	aspect-ratio: $golden-ratio;
 	margin: 0 auto;
 
-	img {
+	.slider-image {
 		position: absolute;
 		width: 100%;
-		aspect-ratio: $golden-ratio;
-		border-radius: 12px;
+		height: 100%;
 		object-fit: cover;
 	}
 
@@ -46,53 +51,59 @@
 		opacity: 1;
 		transition: 2s ease-in-out;
 	}
+}
 
-	.quick {
-		transition: 0.2s ease-in-out;
-	}
+.icon {
+	position: relative;
+	width: 96px;
+	height: 96px;
+	margin: -48px auto 0 auto;
 
-	.indicator {
-		position: absolute;
+	.icon-image {
+		@extend .my-box-shadow;
 		width: 100%;
-		bottom: 0;
-		text-align: center;
-
-		.item {
-			display: inline-block;
-			vertical-align: bottom;
-
-			.circle {
-				background-color: $color-primary-container;
-				width: 8px;
-				height: 8px;
-				border-radius: 4px;
-				margin: 6px;
-				transition: 2s ease-in-out;
-			}
-
-			.quick {
-				transition: 0.2s ease-in-out;
-			}
-
-			.active {
-				background-color: $color-primary;
-			}
-		}
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+		background-color: $color-background;
 	}
+}
+
+.site-name {
+	@extend .font-title-large;
+	display: flex;
+	margin: 4px auto 0 auto;
+	padding: 0 16px;
+	justify-content: center;
+}
+
+.site-description {
+	@extend .font-body;
+	display: flex;
+	margin: 4px auto 0 auto;
+	padding: 0 16px;
+	justify-content: center;
+}
+
+.pickup-text {
+	@extend .font-label-large;
+	margin: 24px 16px 8px 16px;
 }
 
 .pickup-posts {
 	margin: 0 16px;
 
 	.post-card {
-		margin-bottom: 8px;
+		margin-bottom: 16px;
 	}
 }
 </style>
 
 <script setup lang="ts">
+const siteName = useRuntimeConfig().siteName
+
 useHead({
-	title: useRuntimeConfig().siteName
+	title: siteName
 });
 
 const posts = await queryContent('posts')
@@ -100,48 +111,27 @@ const posts = await queryContent('posts')
 	.sort({ 'date': -1 })
 	.only(['_path', 'title', 'date', 'tags', 'image'])
 	.find();
+
+const images = posts.map(post => post.image)
+
 const pickupPosts = posts.filter(post => {
 	return useRuntimeConfig().pickupPosts.some(path => path === post._path);
 });
 
 const pageNum = ref(0);
-const img1 = ref(pickupPosts[0].image);
-const img2 = ref(pickupPosts[1].image);
-const isFadein = ref(true);
-const isQuick = ref(false);
+
+const isFadein = (index) => {
+	return index === pageNum.value;
+}
+
 let intervalId = null;
 
-const slider = () => {
-	pageNum.value = (pageNum.value + 1) % pickupPosts.length;
-	if (isFadein.value) {
-		img2.value = pickupPosts[pageNum.value].image;
-	} else {
-		img1.value = pickupPosts[pageNum.value].image;
-	}
-	isQuick.value = false;
-	isFadein.value = !isFadein.value;
-}
-
-const setSlideInterval = () => {
-	intervalId = setInterval(slider, 10000);
-}
-
-const setPage = (setPageNum: number) => {
-	pageNum.value = setPageNum;
-	if (isFadein.value) {
-		img2.value = pickupPosts[pageNum.value].image;
-	} else {
-		img1.value = pickupPosts[pageNum.value].image;
-	}
-	isQuick.value = true;
-	isFadein.value = !isFadein.value;
-	clearInterval(intervalId);
-	setSlideInterval();
-}
-
 onMounted(() => {
-	setSlideInterval();
+	intervalId = setInterval(() => {
+		pageNum.value = (pageNum.value + 1) % images.length;
+	}, 10000);
 });
+
 onBeforeUnmount(() => {
 	clearInterval(intervalId);
 });
