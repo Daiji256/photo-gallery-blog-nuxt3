@@ -10,3 +10,7 @@ $screen-medium-min: 768px;
 $screen-large-min: 992px;
 $screen-x-large-min: 1200px;
 $screen-xx-large-min: 1400px;
+
+.my-box-shadow {
+    box-shadow: 0 0 8px 0 rgba($color-neutral-0, 20%);
+}
