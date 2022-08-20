@@ -1,7 +1,7 @@
 ---
 title: 'Title'
 date: 2022-01-14
-image: '/images/sample-14.jpg'
+image: '/images/sample-14.webp'
 tags: ['tag-6', 'tag-7', tag-8]
 ---
 

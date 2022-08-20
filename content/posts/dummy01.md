@@ -1,7 +1,7 @@
 ---
 title: 'ピンクの雲がもくもくしてた'
 date: 2022-02-01
-image: '/images/sample-01.jpg'
+image: '/images/sample-01.webp'
 tags: ['ディズニーランド', '寿司', 'ぬいぐるみ', '旅行', '記念日', '沖縄生活']
 ---
 
@@ -81,9 +81,9 @@ ___
 |none   |left   |right  |center |
 |a      |b      |c      |d      |
 
-![](/images/sample-01.jpg)
-![](/images/sample-02.jpg)
-<img src="/images/sample-03.jpg" width=250>
+![](/images/sample-01.webp)
+![](/images/sample-02.webp)
+<img src="/images/sample-03.webp" width=250>
 
 普通の日本語の文章。
 
