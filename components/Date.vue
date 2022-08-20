@@ -14,6 +14,7 @@
 type Props = { date: string };
 const { date } = defineProps<Props>();
 const dateDate = new Date(date);
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const dateStr = `${months[dateDate.getMonth()]} ${dateDate.getDate()}, ${dateDate.getFullYear()}`;
+const dateStr = String(dateDate.getFullYear())
+  + '/' + String(dateDate.getMonth() + 1).padStart(2, '0')
+  + '/' + String(dateDate.getDate()).padStart(2, '0');
 </script>
