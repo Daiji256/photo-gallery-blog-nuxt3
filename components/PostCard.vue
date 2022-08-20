@@ -42,7 +42,7 @@
 			margin: 8px 16px 12px 16px;
 
 			.post-title {
-				@extend .font-title-medium;
+				@extend .font-title-small;
 			}
 
 			.post-tags-date {
