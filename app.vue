@@ -85,7 +85,7 @@ useHead({
 		},
 		{
 			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Mono:wght@400;500;700&display=swap',
+			href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+Mono:wght@400;500&display=swap',
 		},
 	],
 });
