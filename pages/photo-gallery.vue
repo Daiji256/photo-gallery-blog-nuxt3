@@ -1,7 +1,7 @@
 <template>
 	<div class="photo-gallery">
 		<NuxtLink class="photo-card" v-for="post in posts" v-bind:to="post._path">
-			<img v-bind:src="`${post.image}`">
+			<img v-bind:src="`${post.image}`" loading="lazy">
 		</NuxtLink>
 	</div>
 </template>
