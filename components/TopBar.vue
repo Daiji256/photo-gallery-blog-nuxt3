@@ -202,7 +202,7 @@ header {
 		position: absolute;
 		width: 100vw;
 		height: 100vh;
-		background-color: rgba($color-neutral-variant-20, 0.4);
+		background-color: rgba($color-neutral-0, 0.4);
 		opacity: 0;
 		transition-timing-function: ease-in;
 		transition: opacity 0.2s;
@@ -227,7 +227,7 @@ header {
 			width: calc(100% - 32px);
 			margin: 0 16px;
 			border: none;
-			border-bottom: 1px solid $color-neutral-variant-50;
+			border-bottom: 1px solid $color-outline;
 		}
 
 		.drawer-menu {
