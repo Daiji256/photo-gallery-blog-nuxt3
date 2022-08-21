@@ -27,7 +27,9 @@
 	}
 
 	.top-title {
-		margin-top: -56px;
+		@extend .font-title-large;
+		margin: -56px 0 0 0;
+		padding: 64px 0 0 0;
 	}
 
 	.post-tags-date {
@@ -73,65 +75,67 @@
 <style lang="scss">
 @import '../assets/scss/variable';
 
-h1 {
-	@extend .font-title-large;
-}
-
-h2 {
-	@extend .font-title-medium;
-}
-
-h3,
-h4,
-h5,
-h6 {
-	@extend .font-title-small;
-}
-
-h2,
-h3,
-h4 {
-	a {
-		color: inherit;
-		text-decoration: none;
-		pointer-events: none;
+.doc-body {
+	h1 {
+		@extend .font-title-large;
 	}
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: -64px 0 0 0;
-	padding: 64px 0 0 0;
-}
+	h2 {
+		@extend .font-title-medium;
+	}
 
-p a {
-	padding: 4px 0;
-	line-height: 3.2rem;
-	color: $color-link;
-	text-decoration: none;
+	h3,
+	h4,
+	h5,
+	h6 {
+		@extend .font-title-small;
+	}
 
-	@media (hover: hover) {
-		&:hover {
+	h2,
+	h3,
+	h4 {
+		a {
+			color: inherit;
+			text-decoration: none;
+			pointer-events: none;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: -64px 0 0 0;
+		padding: 64px 0 0 0;
+	}
+
+	p a {
+		padding: 4px 0;
+		line-height: 3.2rem;
+		color: $color-link;
+		text-decoration: none;
+
+		@media (hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&:active {
 			text-decoration: underline;
 		}
 	}
 
-	&:active {
-		text-decoration: underline;
+	strong {
+		font-weight: 500;
 	}
-}
 
-strong {
-	font-weight: 500;
-}
-
-em {
-	color: $color-primary;
-	font-style: inherit;
+	em {
+		color: $color-primary;
+		font-style: inherit;
+	}
 }
 </style>
 
