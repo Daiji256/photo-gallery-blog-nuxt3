@@ -181,10 +181,10 @@ useHead({
 	meta: [
 		{ name: 'twitter:title', content: title },
 		{ name: 'twitter:image', content: ogp },
-		{ name: 'og:type', content: 'article' },
-		{ name: 'og:title', content: title },
-		{ name: 'og:image', content: ogp },
-		{ name: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
+		{ property: 'og:type', content: 'article' },
+		{ property: 'og:title', content: title },
+		{ property: 'og:image', content: ogp },
+		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
 	],
 });
 </script>
