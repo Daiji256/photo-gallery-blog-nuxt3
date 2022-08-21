@@ -26,11 +26,11 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	.post-card-main {
-		@extend .my-box-shadow;
 		width: 100%;
 		overflow: hidden;
 		border-radius: 12px;
 		background-color: $color-surface;
+		box-shadow: $my-box-shadow-level-2;
 
 		.post-image-background .post-image {
 			width: 100%;
@@ -71,6 +71,7 @@
 
 	@media (hover: hover) {
 		&:hover .post-card-main {
+			box-shadow: $my-box-shadow-level-1;
 			background-color: rgba($color-on-surface-variant, $state-hover);
 
 			.post-image-background {
@@ -84,6 +85,7 @@
 	}
 
 	&:active .post-card-main {
+		box-shadow: $my-box-shadow-level-1;
 		background-color: rgba($color-on-surface-variant, $state-pressed);
 
 		.post-image-background {

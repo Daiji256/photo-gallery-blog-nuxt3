@@ -34,12 +34,12 @@
 	margin: -48px auto 0 auto;
 
 	.icon-image {
-		@extend .my-box-shadow;
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
 		object-fit: cover;
 		background-color: $color-background;
+		box-shadow: $my-box-shadow-level-1;
 	}
 }
 

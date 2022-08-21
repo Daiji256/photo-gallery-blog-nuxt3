@@ -72,12 +72,13 @@
 				justify-content: center;
 				align-items: center;
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				box-shadow: $my-box-shadow-level-1;
 			}
 		}
 
 		.unselected {
-			@extend .my-box-shadow;
-			color: $color-on-surface-variant;
+			color: $color-on-surface;
+			background-color: $color-surface;
 
 			@media (hover: hover) {
 				&:hover {
