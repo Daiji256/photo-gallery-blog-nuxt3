@@ -112,6 +112,15 @@ p a {
 	padding: 4px 0;
 	line-height: 3.2rem;
 }
+
+strong {
+	font-weight: 500;
+}
+
+em {
+	color: $color-primary;
+	font-style: inherit;
+}
 </style>
 
 <script setup lang="ts">
