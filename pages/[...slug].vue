@@ -107,8 +107,19 @@
 	h4,
 	h5,
 	h6 {
-		margin: -64px 0 0 0;
+		margin: -40px 0 8px 0;
 		padding: 64px 0 0 0;
+
+		&:first-child {
+			margin-top: -64px;
+		}
+	}
+
+	p,
+	ul,
+	ol,
+	pre {
+		margin-bottom: 24px;
 	}
 
 	p a {
@@ -126,6 +137,12 @@
 		&:active {
 			text-decoration: underline;
 		}
+	}
+
+	hr {
+		margin: 8px 0;
+		border: none;
+		border-bottom: 1px solid $color-outline;
 	}
 
 	strong {
