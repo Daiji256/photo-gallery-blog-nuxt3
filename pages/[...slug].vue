@@ -115,14 +115,6 @@
 		}
 	}
 
-	p,
-	ul,
-	ol,
-	img,
-	pre {
-		margin-bottom: 24px;
-	}
-
 	p a {
 		padding: 4px 0;
 		line-height: 3.2rem;
@@ -147,6 +139,12 @@
 		object-fit: cover;
 	}
 
+	ul,
+	ol {
+		margin: 0;
+		padding: 0 0 0 24px;
+	}
+
 	hr {
 		margin: 8px 0;
 		border: none;
@@ -160,6 +158,14 @@
 	em {
 		color: $color-primary;
 		font-style: inherit;
+	}
+
+	p,
+	ul,
+	ol,
+	img,
+	pre {
+		margin-bottom: 24px;
 	}
 }
 </style>
