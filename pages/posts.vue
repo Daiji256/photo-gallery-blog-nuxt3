@@ -125,10 +125,10 @@ useHead({
 	meta: [
 		{ name: 'twitter:title', content: title },
 		{ name: 'twitter:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
-		{ name: 'og:type', content: 'article' },
-		{ name: 'og:title', content: title },
-		{ name: 'og:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
-		{ name: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
+		{ property: 'og:type', content: 'article' },
+		{ property: 'og:title', content: title },
+		{ property: 'og:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
+		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
 	],
 });
 
