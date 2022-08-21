@@ -111,6 +111,18 @@ h6 {
 p a {
 	padding: 4px 0;
 	line-height: 3.2rem;
+	color: $color-link;
+	text-decoration: none;
+
+	@media (hover: hover) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&:active {
+		text-decoration: underline;
+	}
 }
 
 strong {
