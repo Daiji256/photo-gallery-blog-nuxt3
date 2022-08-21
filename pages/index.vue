@@ -74,10 +74,17 @@
 </style>
 
 <script setup lang="ts">
-const siteName = useRuntimeConfig().siteName
-
+const siteName = useRuntimeConfig().siteName;
 useHead({
-	title: siteName
+	title: siteName,
+	meta: [
+		{ name: 'twitter:title', content: siteName },
+		{ name: 'twitter:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
+		{ name: 'og:type', content: 'blog' },
+		{ name: 'og:title', content: siteName },
+		{ name: 'og:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
+		{ name: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
+	],
 });
 
 const posts = await queryContent('posts')

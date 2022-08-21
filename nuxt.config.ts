@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			siteName: 'Photo Gallery',
+			baseUrl: 'https://photo-gallery-blog-nuxt3.vercel.app',
 			pickupPosts: ['/posts/dummy01', '/posts/dummy02', '/posts/dummy03'],
 		}
 	},

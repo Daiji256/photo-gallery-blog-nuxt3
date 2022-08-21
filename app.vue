@@ -65,7 +65,6 @@ useHead({
 	viewport: 'width=device-width, initial-scale=1.0',
 	meta: [
 		{ name: 'twitter:card', content: 'summary_large_image' },
-		{ name: 'twitter:site', content: '@Daiji256' },
 		{ name: 'og:site_name', content: useRuntimeConfig().siteName },
 	],
 	link: [
