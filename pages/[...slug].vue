@@ -118,6 +118,7 @@
 	p,
 	ul,
 	ol,
+	img,
 	pre {
 		margin-bottom: 24px;
 	}
@@ -137,6 +138,13 @@
 		&:active {
 			text-decoration: underline;
 		}
+	}
+
+	img {
+		width: 100%;
+		border-radius: 12px;
+		aspect-ratio: $golden-ratio;
+		object-fit: cover;
 	}
 
 	hr {
