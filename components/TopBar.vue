@@ -37,8 +37,8 @@
 				</div>
 				<div class="text">ホーム</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/posts/") }' v-on:click="closeMenu"
-				to="/posts/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/posts") }' v-on:click="closeMenu"
+				to="/posts">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -49,8 +49,8 @@
 					すべての投稿
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery/") }' v-on:click="closeMenu"
-				to="/photo-gallery/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery") }' v-on:click="closeMenu"
+				to="/photo-gallery">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
@@ -60,8 +60,8 @@
 				<div class="text">ギャラリー</div>
 			</NuxtLink>
 			<hr class="line">
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/privacy-policy/") }' v-on:click="closeMenu"
-				to="/privacy-policy/">
+			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/privacy-policy") }' v-on:click="closeMenu"
+				to="/privacy-policy">
 				<div class="logo">
 					<svg height="24" width="24">
 						<path fill="currentColor"
