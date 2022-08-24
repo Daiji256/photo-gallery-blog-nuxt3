@@ -39,12 +39,12 @@ body {
 
 .page-enter-active,
 .layout-enter-active {
-	transition: 0.0625s ease-in;
+	transition: 0.2s ease-in;
 }
 
 .page-leave-active,
 .layout-leave-active {
-	transition: 0.0625s ease-out;
+	transition: 0.2s ease-out;
 }
 
 .page-enter-from,
