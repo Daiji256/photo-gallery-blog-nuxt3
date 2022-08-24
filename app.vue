@@ -26,6 +26,7 @@ html {
 
 body {
 	font-family: $font-family-sans-serif;
+	font-feature-settings: "chws" 1;
 	-webkit-text-size-adjust: 100%;
 	line-break: strict;
 	text-align: justify;
@@ -85,6 +86,10 @@ useHead({
 		{
 			rel: 'stylesheet',
 			href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap',
+		},
+		{
+			rel: 'stylesheet',
+			href: 'https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-all.min.css',
 		},
 	],
 });
