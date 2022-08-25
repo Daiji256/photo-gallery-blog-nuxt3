@@ -1,7 +1,7 @@
 <template>
 	<div class="photo-gallery">
 		<NuxtLink class="photo-card" v-for="post in posts" v-bind:to="post._path">
-			<img v-bind:src="`${post.image}`" loading="lazy">
+			<img v-bind:src="`${post.image}`" v-bind:alt="`Thumbnail: ${post.title}`" loading="lazy">
 		</NuxtLink>
 	</div>
 </template>
@@ -47,6 +47,6 @@ useHead({
 const posts = await queryContent('posts')
 	.where({ '_draft': false })
 	.sort({ 'date': -1 })
-	.only(['_path', 'image'])
+	.only(['_path', 'title', 'image'])
 	.find();
 </script>

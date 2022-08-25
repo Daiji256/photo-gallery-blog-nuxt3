@@ -1,6 +1,6 @@
 <template>
 	<div class="post">
-		<img class="top-image" v-bind:src="data.image">
+		<img class="top-image" v-bind:src="data.image" v-bind:alt="`Thumbnail: ${data.title}`">
 		<h1 class="top-title" v-bind:id="data.title">{{ data.title }}</h1>
 		<div class="post-tags-date">
 			<NuxtLink class="post-tag" v-for="tag in data.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>

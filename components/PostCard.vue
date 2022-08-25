@@ -3,7 +3,7 @@
 		<NuxtLink class="post-card-click" v-bind:to="path">
 			<div class="post-card-main">
 				<div class="post-image-background">
-					<img class="post-image" v-bind:src="image" loading="lazy">
+					<img class="post-image" v-bind:src="image" v-bind:alt="`Thumbnail: ${title}`" loading="lazy">
 				</div>
 				<div class="post-info">
 					<div class="post-title">{{ title }}</div>

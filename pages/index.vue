@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<img src="/images/sample-00.webp" class="top-image">
+		<img src="/images/sample-00.webp" class="top-image" alt="Home top image">
 		<div class="icon">
-			<img class="icon-image" src="/icons/icon.svg">
+			<img class="icon-image" src="/icons/icon.svg" alt="Icon image">
 		</div>
 		<div class="site-name">{{ siteName }}</div>
 		<div class="site-description">
