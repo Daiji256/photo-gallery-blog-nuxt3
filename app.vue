@@ -89,7 +89,7 @@ useHead({
 		},
 		{
 			rel: 'stylesheet',
-			href: 'https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-all.min.css',
+			href: 'https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-all.min.css',
 		},
 	],
 });
