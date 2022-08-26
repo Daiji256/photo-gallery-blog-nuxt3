@@ -13,15 +13,7 @@
 		</div>
 		<div class="header-box">
 			<NuxtLink class="title-click" to="/" v-on:click="closeMenu">
-				<div class="title">
-					<div class="title-logo">
-						<svg height="24" width="24">
-							<path fill="currentColor"
-								d="M8 18 12 14.95 16 18 14.5 13.05 18.5 10.2H13.6L12 5L10.4 10.2H5.5L9.5 13.05ZM12 22Q9.925 22 8.1 21.212Q6.275 20.425 4.925 19.075Q3.575 17.725 2.788 15.9Q2 14.075 2 12Q2 9.925 2.788 8.1Q3.575 6.275 4.925 4.925Q6.275 3.575 8.1 2.787Q9.925 2 12 2Q14.075 2 15.9 2.787Q17.725 3.575 19.075 4.925Q20.425 6.275 21.212 8.1Q22 9.925 22 12Q22 14.075 21.212 15.9Q20.425 17.725 19.075 19.075Q17.725 20.425 15.9 21.212Q14.075 22 12 22ZM12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12ZM12 20Q15.325 20 17.663 17.663Q20 15.325 20 12Q20 8.675 17.663 6.337Q15.325 4 12 4Q8.675 4 6.338 6.337Q4 8.675 4 12Q4 15.325 6.338 17.663Q8.675 20 12 20Z" />
-						</svg>
-					</div>
-					<div class="title-text">{{ siteName }}</div>
-				</div>
+				<div class="title">{{ siteName }}</div>
 			</NuxtLink>
 		</div>
 	</header>
@@ -151,27 +143,12 @@ header {
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 			.title {
+				@extend .font-label-large;
 				display: inline-flex;
 				height: 48px;
 				padding: 0 12px;
 				border-radius: 24px;
 				align-items: center;
-
-				.title-logo {
-					display: grid;
-				}
-
-				.title-text {
-					@extend .font-label-large;
-					display: none;
-					margin: 0 8px 0 4px;
-				}
-
-				@media screen and (min-width: $screen-x-small-min) {
-					.title-text {
-						display: grid;
-					}
-				}
 			}
 
 			@media (hover: hover) {
