@@ -4,7 +4,14 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
 	target: 'static',
 	css: ['modern-css-reset'],
-	modules: ['@nuxt/content'],
+	modules: ['@nuxt/content', '@nuxtjs/google-fonts'],
+	googleFonts: {
+		inject: true,
+		download: true,
+		families: {
+			'Noto Sans JP': [400, 500],
+		},
+	},
 	runtimeConfig: {
 		public: {
 			siteName: 'Photo Gallery',
