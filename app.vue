@@ -74,10 +74,6 @@ useHead({
 			type: 'image/x-icon',
 			href: '/favicon/favicon.ico'
 		},
-		{
-			rel: 'stylesheet',
-			href: 'https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-all.min.css',
-		},
 	],
 });
 </script>
