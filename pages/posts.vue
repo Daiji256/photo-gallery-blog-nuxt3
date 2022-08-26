@@ -129,6 +129,8 @@ useHead({
 		{ property: 'og:title', content: title },
 		{ property: 'og:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
 		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
+		{ property: 'og:description', content: 'すべての投稿' },
+		{ name: 'description', content: 'すべての投稿' },
 	],
 });
 

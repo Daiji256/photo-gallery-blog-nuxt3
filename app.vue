@@ -65,8 +65,8 @@ useHead({
 	charset: 'utf-8',
 	viewport: 'width=device-width, initial-scale=1.0',
 	meta: [
-		{ name: 'twitter:card', content: 'summary_large_image' },
 		{ property: 'og:site_name', content: useRuntimeConfig().siteName },
+		{ name: 'twitter:card', content: 'summary_large_image' },
 	],
 	link: [
 		{

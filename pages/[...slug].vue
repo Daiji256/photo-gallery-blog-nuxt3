@@ -176,15 +176,16 @@ const content = await useAsyncData(path, () => queryContent(path).findOne());
 const data = content.data;
 const title = data.value.title + ' - ' + useRuntimeConfig().siteName;
 const ogp = useRuntimeConfig().baseUrl + data.value.image.replace('.webp', '-ogp.jpg');
+const description = data.value.description;
 useHead({
 	title: title,
 	meta: [
-		{ name: 'twitter:title', content: title },
-		{ name: 'twitter:image', content: ogp },
 		{ property: 'og:type', content: 'article' },
 		{ property: 'og:title', content: title },
 		{ property: 'og:image', content: ogp },
 		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
+		{ property: 'og:description', content: description },
+		{ name: 'description', content: description },
 	],
 });
 </script>

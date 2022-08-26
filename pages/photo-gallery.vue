@@ -35,12 +35,12 @@ const title = 'ギャラリー' + ' - ' + useRuntimeConfig().siteName;
 useHead({
 	title: title,
 	meta: [
-		{ name: 'twitter:title', content: title },
-		{ name: 'twitter:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
 		{ property: 'og:type', content: 'article' },
 		{ property: 'og:title', content: title },
 		{ property: 'og:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
 		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
+		{ property: 'og:description', content: 'すべての投稿のサムネイルのギャラリー' },
+		{ name: 'description', content: 'すべての投稿のサムネイルのギャラリー' },
 	],
 });
 
