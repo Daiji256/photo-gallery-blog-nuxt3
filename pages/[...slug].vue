@@ -107,8 +107,8 @@
 	h4,
 	h5,
 	h6 {
-		margin: -40px 0 8px 0;
-		padding: 64px 0 0 0;
+		margin-top: -40px;
+		padding-top: 64px;
 
 		&:first-child {
 			margin-top: -64px;
@@ -160,12 +160,18 @@
 		font-style: inherit;
 	}
 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
 	p,
 	ul,
 	ol,
 	img,
 	pre {
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 	}
 }
 </style>
